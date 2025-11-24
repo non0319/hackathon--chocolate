@@ -1,0 +1,17 @@
+@use '_mixin' as *;
+
+
+
+footer {
+    max-width: 1120px;
+
+    .container {
+        display: flex;
+    }
+
+    a{
+        color: black ;
+    }
+
+}
+

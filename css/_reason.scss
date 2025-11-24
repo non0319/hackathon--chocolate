@@ -1,0 +1,71 @@
+@use '_mixin' as *;
+
+#reason {
+    .reason-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .icon-area {
+            width: 30%;
+        }
+
+        .text-area {
+            width: 65%;
+            padding: 20px;
+
+            h3.reason-subtitle {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+
+// 流れるオレンジの文字
+.infinite-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0; // セクション間の余白は調整可
+    background: transparent;
+
+    .marquee-track {
+        display: flex;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite;
+    }
+
+    span {
+        font-size: 300px;
+        font-weight: 600;
+        color: rgba(233, 124, 39, 0.2); // #E97C27 の 20% 透明
+        display: inline-block;
+        padding-right: 50px; // 文字間の余白
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+// ==============================
+// スマホ対応（フォント縮小）
+// ==============================
+@media (max-width: $sp) {
+  .infinite-marquee {
+
+    span {
+      font-size: 120px; 
+    }
+  }
+}
+
