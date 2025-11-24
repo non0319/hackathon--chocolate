@@ -1,0 +1,161 @@
+@use "mixin" as *;
+
+#about {
+    position: relative;
+    background-image: url(../img/about-bg.png);
+    background-size: cover;
+    padding: 800px 0;
+    width: 100%;
+    margin-top: -30%;
+
+    .content-wrapper {
+
+        .speech-bubbles {
+            max-width: 1200px;
+
+            li.bubble {
+                font-family: "M PLUS 1p", sans-serif;
+                font-size: 1.1rem;
+                position: absolute;
+                font-weight: 900;
+                background-color: white;
+                padding: 80px;
+                border-radius: 50%;
+                width: fit-content;
+                box-shadow: 30px 0px 0px 0px rgba(239, 239, 239, 0.62);
+            }
+
+            .bubble-1 {
+                top: 40%;
+                left: 20%;
+            }
+
+            .bubble-2 {
+                top: 30%;
+                right: 20%;
+            }
+
+            .bubble-3 {
+                top: 58%;
+                left: 10%;
+            }
+
+            .bubble-4 {
+                top: 50%;
+                right: 15%;
+            }
+        }
+    }
+
+    .illustration-area {
+        position: absolute;
+        width: 35%;
+        right: 5%;
+        bottom: 10%;
+        z-index: 2;
+
+        .central-illustration {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .solution-text {
+        position: absolute;
+        bottom: 20%;
+        left: 40%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        color: white;
+        z-index: 5;
+        white-space: nowrap;
+
+
+        .service-name {
+            font-size: 3rem;
+        }
+
+        .solution-icon {
+            width: 30px;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.section-intro {
+    max-width: 950px;
+    margin: 100px auto 160px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: $sub-color;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+
+    h2 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+        margin-bottom: 80px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            background-color: $main-color;
+            width: 80px;
+            height: 5px;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        font-weight: 600;
+    }
+}
+
+
+@include sp {
+    #about {
+        background-position: center;
+        padding: 600px 0;
+        margin-top: -70%;
+
+        .content-wrapper {
+            .speech-bubbles {
+                li.bubble {
+                    font-size: 0.875rem;
+                    padding: 40px;
+                }
+
+                .bubble-3 {
+                    top: 60%;
+                }
+            }
+        }
+
+            .illustration-area {
+                width: 45%;
+            }
+
+        .solution-text {
+            bottom: 15%;
+            left: 5%;
+            font-size: 1.5rem;
+
+
+            .service-name {
+                font-size: 2.5rem;
+            }
+
+            .solution-icon {
+                width: 20px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,66 @@
+// ---------------------------------------
+// responsive
+// ---------------------------------------
+// $pc: 1080px;
+// $tab: 800px;
+$sp: 768px;
+
+// @mixin pc {
+//     @media (max-width: ($pc)) {
+//         @content;
+//     }
+// }
+
+// @mixin tab {
+//     @media (max-width: ($tab)) {
+//         @content;
+//     }
+// }
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+// ---------------------------------------
+// 定数宣言
+// ---------------------------------------
+$main-color: #4B80AA;                   //メインカラー
+$sub-color: #E3ECF8;                    //サブカラー
+$accent-color: #E97C27;                 //アクセントカラー
+$font-color: #3c3c3c;                   //フォントカラー
+
+
+
+$section-margin: 100px;                   //PCセクション間の余白
+$section-margin-sp: 50px;                 //SPセクション間の余白
+
+// section-titleの下線
+$line-color: #4B80AA;
+$line-thickness: 2px;
+$clip-depth: 30px;
+$line-width-base: 750;
+
+$svg-line-y: 1; 
+$svg-notch-x-left: 325; 
+$svg-notch-center-x: 375; 
+$svg-notch-x-right: 425; 
+$svg-notch-y-bottom: 31; 
+$svg-height: 32; 
+// ---------------------------------------
+// 関数
+// ---------------------------------------
+
+
+
+// ---------------------------------------
+// z-index 管理
+// ---------------------------------------
+// section内        : ~99
+// header           : 100
+// toggle-btn       : 200
+// loading1         : 1001
+// loading2         : 1000
+// ---------------------------------------
+
