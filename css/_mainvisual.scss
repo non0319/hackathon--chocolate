@@ -1,0 +1,179 @@
+@use '_mixin' as *;
+
+.mainvisual {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .mv-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+        margin-right: -30%;
+        padding-inline: 3%;
+        
+        .fam-img {
+            width: 40%;
+            height: auto;
+            display: block;
+        }
+
+        h2 {
+            margin: 40px 0;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            white-space: nowrap;
+        }
+
+        .mv-text {
+            line-height: 1.8;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+        }
+
+    }
+
+    .mv-right {
+        width: 80%;
+        height: 100%;
+        position: relative;
+        z-index: 5;
+        overflow: hidden;
+
+        ul.image-slider {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            min-width: 300px;
+            position: relative;
+
+            li {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                animation: slider 25s infinite;
+                min-width: 70vw;
+
+                &:nth-child(1) {
+                    animation-delay: 0s;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: 5s;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: 10s;
+                }
+
+                &:nth-child(4) {
+                    animation-delay: 15s;
+                }
+
+                &:nth-child(5) {
+                    animation-delay: 20s;
+                }
+
+                img {
+                    min-width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
+        }
+
+        .sit-img {
+            max-width: 120px;
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            z-index: 10;
+        }
+    }
+}
+
+
+// 画像フェードイン・フェードアウトアニメーション
+@keyframes slider {
+    0% {
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    28% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+@include sp {
+    .mainvisual {
+        height: auto;
+        padding: 15% 3%;
+
+        .mv-left {
+            margin: 80px 0 0 0;
+            width: 100%;
+            align-items: stretch;
+            padding-inline: 0;
+
+
+            .fam-img {
+                max-width: 20%;
+                margin-left: 10%;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+                margin: 20px 0;
+                white-space: normal;
+                line-height: 1.4;
+            }
+
+            .mv-text {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-left: 10%;
+            }
+        }
+
+        .mv-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            ul.image-slider {
+                li {
+                    img {
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .sit-img {
+                max-width: 10%;
+                bottom: 40%;
+            }
+        }
+    }
+}
+
+

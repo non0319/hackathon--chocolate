@@ -1,0 +1,13 @@
+@use "mixin" as *;
+
+#cta1, #cta2{
+    padding: 40px 0;
+    margin-top: $section-margin;
+    text-align: center;
+
+    p{
+        font-size: 1.125rem;
+        margin-bottom: 40px;
+    }
+}
+

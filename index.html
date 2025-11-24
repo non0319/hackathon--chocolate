@@ -1,13 +1,1102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ProNavi</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
+
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <!-- ========================================== -->
+    <!-- header -->
+    <!-- ========================================== -->
+
+    <header>
+        <h1>
+            <a href="#"><img src="img/logo2.png" alt="logo" class="logo"></a>
+        </h1>
+
+        <nav class="flip-nav" id="flip-nav">
+            <ul>
+                <li class="flip-item">
+                    <a href="#about" class="flip-btn close-menu-link">
+                        <div class="flip-label">
+                            <span class="jp front">ProNaviとは</span>
+                            <span class="en back">about</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="flip-item">
+                    <a href="#reason" class="flip-btn">
+                        <div class="flip-label">
+                            <span class="jp front">選ばれる理由</span>
+                            <span class="en back">reason</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="flip-item">
+                    <a href="#strengths" class="flip-btn">
+                        <div class="flip-label">
+                            <span class="jp front">ProNaviの強み</span>
+                            <span class="en back">strengths</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="flip-item">
+                    <a href="#change" class="flip-btn">
+                        <div class="flip-label">
+                            <span class="jp front">受講後の変化</span>
+                            <span class="en back">change</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="flip-item">
+                    <a href="#achievements" class="flip-btn">
+                        <div class="flip-label">
+                            <span class="jp front">受講生の実績</span>
+                            <span class="en back">achievements</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="flip-item">
+                    <a href="#teachers" class="flip-btn">
+                        <div class="flip-label">
+                            <span class="jp front">講師紹介</span>
+                            <span class="en back">teachers</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="flip-item">
+                    <a href="#metaleaf" class="flip-btn">
+                        <div class="flip-label">
+                            <span class="jp front">メタリーフとは</span>
+                            <span class="en back">metaleaf</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="flip-item">
+                    <a href="#curriculum" class="flip-btn">
+                        <div class="flip-label">
+                            <span class="jp front">受講の流れ</span>
+                            <span class="en back">curriculum</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="flip-item">
+                    <a href="#question" class="flip-btn">
+                        <div class="flip-label">
+                            <span class="jp front">よくある質問</span>
+                            <span class="en back">question</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/kakashi.programming.lab/" target="_blank" class="insta-link">
+                        <img src="img/instagram.svg" alt="instagram">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- ========================================== -->
+        <!-- mainvisual -->
+        <!-- ========================================== -->
+        <section class="mainvisual">
+            <div class="mv-left">
+                <img src="img/mv-illust_1.png" alt="ファミリーのイラスト" class="fam-img">
+                <h2>
+                    <span class="title1">“ 在宅でできるWeb制作 ”を学ぶ。</span><br>
+                    <span class="title2">ProNaviがあなたの未来をナビします。</span>
+                </h2>
+
+                <div class="mv-text">
+                    <p>さあ、始めよう。</p>
+                    <p>一歩踏み出せば、未来が変わる。</p>
+                    <p>あなたの挑戦を、私たちが全力でサポートします。</p>
+                </div>
+
+                <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">
+                    <p>無料カウンセリングを予約する</p>
+                    <img src="img/arrow-icon.png" alt="矢印">
+                </a>
+            </div>
+
+            <div class="mv-right">
+                <!-- ▼メインビュー右のスライダー写真ー▼ -->
+                <ul class="image-slider">
+                    <li><img src="img/mv-1.png" alt="学習風景1" class="active"></li>
+                    <li><img src="img/mv-2.png" alt="学習風景1" class="active"></li>
+                    <li><img src="img/mv-3.png" alt="学習風景1" class="active"></li>
+                    <li><img src="img/mv-4.png" alt="学習風景1" class="active"></li>
+                    <li><img src="img/mv-5.png" alt="学習風景1" class="active"></li>
+                </ul>
+                <!-- ▲メインビュー右のスライダー写真▲ -->
+
+                <img src="img/mv-illust_2.png" alt="座っている人のイラスト" class="sit-img">
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- about -->
+        <!-- ========================================== -->
+        <section id="about">
+            <div class="content-wrapper">
+                <ul class="speech-bubbles">
+                    <li class="bubble bubble-1 fadein">プログラミングって難しそう…</li>
+                    <li class="bubble bubble-2 fadein">副業したいけど、時間が取れるか不安…</li>
+                    <li class="bubble bubble-3 fadein">オンラインで学べるスクールって<br>たくさんありすぎて選べない…</li>
+                    <li class="bubble bubble-4 fadein">独学で頑張ったけど、続かなかった…</li>
+                </ul>
+            </div>
+
+            <div class="illustration-area">
+                <img src="img/back-cuate.png" alt="悩みを抱える二人の人物" class="central-illustration">
+            </div>
+
+            <p class="solution-text fadein">
+                こんな悩みも<br>
+                <span class="service-name">ProNavi</span>におまかせ
+                <img src="img/decoration.png" alt="小さな装飾アイコン" class="solution-icon">
+            </p>
+        </section>
+
+        <!-- ▼セクションイントロ▼ -->
+        <div class="section-intro fadein">
+            <h2>
+                ProNaviとは「在宅ワークを叶えたい方」に選ばれている<br>
+                <span class="blue">6ヶ月集中のプログラミングスクールです。</span>
+            </h2>
+            <p>
+                プロナビは、ただのプログラミングスクールではありません。<br>
+                1日1時間の学習を半年間。あなたのレベルに合わせた“専用学習プラン”で、本気の6ヶ月を一緒に走ります。<br>
+                決して楽ではありませんが、半年後には「できる自分」に出会えるはず。<br>
+                本気で変わりたいあなたを、誰より本気のコーチが支えます。
+            </p>
+        </div>
+
+        <!-- セクションイントロ -->
+
+        <!-- ========================================== -->
+        <!-- reason -->
+        <!-- ========================================== -->
+        <section id="reason" class="container">
+            <div class="section-header">
+                <h2 class="section-title">ProNaviが<span class="blue">選ばれる<span class="large">3つ</span>の理由</span></h2>
+            </div>
+
+            <ul class="reasons-list">
+                <li class="reason-item">
+                    <div class="icon-area">
+                        <img src="img/batch1.png" alt="お客様満足度 99% 月桂樹バッジ" class="stat-badge-image">
+                    </div>
+                    <div class="text-area">
+                        <h3 class="reason-subtitle">「できる」を実感できるから、満足度が高い。</h3>
+                        <p class="reason-description">
+                            質問への即レス対応や、ペースに合わせた個別フィードバックで置いていかれない学習環境を実現。モチベーションが続く仕組みが、学習者の満足度を高めています。</p>
+                    </div>
+                </li>
+
+                <li class="reason-item reverse fadein">
+                    <div class="text-area">
+                        <h3 class="reason-subtitle">「学ぶだけで終わらない、実案件獲得まで全工程サポート」</h3>
+                        <p class="reason-description">
+                            コーチが案件獲得まで並走。営業同行とフィードバックを繰り返すことで、自分で案件を獲得するスキルが身につき、実際の案件獲得へ。</p>
+                    </div>
+                    <div class="icon-area">
+                        <img src="img/batch2.png" alt="案件獲得率 93% 月桂樹バッジ" class="stat-badge-image">
+                    </div>
+                </li>
+
+                <li class="reason-item fadein">
+                    <div class="icon-area">
+                        <img src="img/batch3.png" alt="離脱率 1% 月桂樹バッジ" class="stat-badge-image">
+                    </div>
+                    <div class="text-area fadein">
+                        <h3 class="reason-subtitle">「"一人じゃない"から、続けられる。」</h3>
+                        <p class="reason-description">挫折の原因は孤独感と不安。ProNaviでは、仲間・メンター・コミュニティの3つのサポート体制で、あなたの成長を伴走します。</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ▼流れるオレンジの文字ー▼ -->
+        <section class="infinite-marquee">
+            <div class="marquee-track">
+                <span>ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp;</span>
+                <span>ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp;</span>
+            </div>
+        </section>
+
+        <!-- ▲流れるオレンジの文字▲ -->
+
+        <!-- ========================================== -->
+        <!-- strengths -->
+        <!-- ========================================== -->
+        <section id="strengths">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">ProNaviの<span class="large">強み</span></h2>
+                </div>
+                <h3 class="lead">1on1授業でスキルを習得、案件獲得から営業代行まで徹底サポート。<br>コミュニティの仲間と一緒に成長できます。</h3>
+
+                <ul class="card-stack-container">
+                    <div class="info-card" data-card-id="1">
+                        <div class="card-image-wrapper">
+                            <img src="img/strengths-1.png" alt="1on1授業の画像" class="card-img">
+                        </div>
+                        <div class="card-text-content">
+                            <span class="card-number">01</span>
+                            <p class="card-title-text">週1回の1on1授業</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card" data-card-id="2">
+                        <div class="card-image-wrapper">
+                            <img src="img/strengths-2.png" alt="案件獲得サポートの画像" class="card-img">
+                        </div>
+                        <div class="card-text-content">
+                            <span class="card-number">02</span>
+                            <p class="card-title-text">案件獲得までを徹底サポート</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card" data-card-id="3">
+                        <div class="card-image-wrapper">
+                            <img src="img/strengths-3.png" alt="営業代行サポートの画像" class="card-img">
+                        </div>
+                        <div class="card-text-content">
+                            <span class="card-number">03</span>
+                            <p class="card-title-text">営業代行サポート</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card" data-card-id="4">
+                        <div class="card-image-wrapper">
+                            <img src="img/strengths-4.png" alt="コミュニティの画像" class="card-img">
+                        </div>
+                        <div class="card-text-content">
+                            <span class="card-number">04</span>
+                            <p class="card-title-text">コミュニティで仲間と繋がる</p>
+                        </div>
+                    </div>
+
+                </ul>
+                <div id="card-detail-section">
+                </div>
+
+            </div>
+        </section>
+
+        <section id="change" class="container">
+            <div class="section-header">
+                <h2 class="section-title">受講後の<span class="highlight">変化</span></h2>
+            </div>
+            <h3 class="lead">実践的なプログラミングスキルを身につけ、<br>
+                多くの受講生が理想の働き方を叶えています。</h3>
+
+            <div class="story-container">
+                <p class="story-appeal-text">一人で学習して挫折したあなたへ</p>
+
+                <div class="story-slider">
+
+                    <div class="story-panel before-panel active" data-step="before">
+                        <div class="bubble bubble-error">エラーでつまづく</div>
+                        <div class="bubble bubble-unknown">何を作ればいいかわからない</div>
+                        <img src="img/before.png" alt="悩んでいる男性" class="story-image">
+                        <span class="label before-label">Before</span>
+                    </div>
+
+                    <div class="story-panel after-panel" data-step="after">
+                        <div class="bubble bubble-project">案件を獲得</div>
+                        <div class="bubble bubble-team">仲間と開発</div>
+                        <div class="bubble bubble-biz">営業に同行！</div>
+                        <img src="img/after.png" alt="笑顔で話す女性たち" class="story-image">
+                        <span class="label after-label">After</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- achievements -->
+        <!-- ========================================== -->
+        <section id="achievements" class="container">
+            <div class="section-header">
+                <h2 class="section_title">これが<span class="blue">Pronaviの<span class="large">真実</span></span></h2>
+            </div>
+            <h3 class="lead">実践的なプログラミングスキルを身につけ、<br>
+                多くの受講生が理想の働き方を叶えています。</h3>
+
+            <div class="book-area">
+                <ul class="book-item">
+                    <li class="student-page" style="z-index: 4;">
+                        <h4 class="heading">独学で挫折後、サポートを受け<span class="heading-strong">5ヶ月で案件獲得！<br>
+                                副業で月収〇〇達成！</span></h4>
+                        <div class="page-item">
+                            <div class="page-item-student">
+                                <img src="img/portfolio1.png" alt="受講生">
+                                <p class="student-name">りょうたさん</p>
+                                <p class="student-info">30代 / 会社員</p>
+                                <p class="student-comment">
+                                    １対１での質問ができると聞いてプロナビに入り、実際2ヶ月間ほど１対１で毎週教えて頂きました。案件獲得も３度ほど打ち合わせに同行いただいたため、案件の進め方も教えて頂きました。
+                                </p>
+                            </div>
+                            <div class="page-item-achievement">
+                                <a class="achievement-img" href="https://pronavi-board.noe-p.com/" target="_blank"><img
+                                        src="img/achievements1.png" alt="実績"></a>
+                                <div class="achievement-link">
+                                    <a class="link_text" href="https://pronavi-board.noe-p.com/"
+                                        target="_blank">サイトへ</a>
+                                    <a class="link-text" href="https://pronavi-board.noe-p.com/" target="_blank"><img
+                                            class="link-icon" src="img/open.png" alt="リンクアイコン"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="student-page" style="z-index: 3;">
+                        <h4 class="heading">仕事・家事・育児の中で<span class="heading-strong">5ヶ月間で初案件獲得！</span><br>
+                            継続的に案件獲得中！<span class="heading-strong">フリーランスに！</span></h4>
+                        <div class="page-item">
+                            <div class="page-item-student">
+                                <img src="img/portfolio2.png" alt="受講生">
+                                <p class="student-name">のぞみさん</p>
+                                <p class="student-info">30代／元会社員元／１児のママ</p>
+                                <p class="student-comment">
+                                    マンツーマンで授業してもらい、疑問を一緒に解決してもらえるだけでなく、課題はあるので、自分で調べたり考えたりする力もついたと思います。案件に向けてもきめ細かいサポートがあるので、プロナビで学習できて良かったと実感します。
+                                </p>
+                            </div>
+                            <div class="page-item-achievement">
+                                <a class="achievement-img" href="https://pronavi-board.noe-p.com/" target="_blank"><img
+                                        src="img/achievements2.png" alt="実績"></a>
+                                <div class="achievement-link">
+                                    <a class="link_text" href="https://pronavi-board.noe-p.com/"
+                                        target="_blank">サイトへ</a>
+                                    <a class="link-text" href="https://pronavi-board.noe-p.com/" target="_blank"><img
+                                            class="link-icon" src="img/open.png" alt="リンクアイコン"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="student-page" style="z-index: 2;">
+                        <h4 class="heading">別スクールで学んだがスキルUPの為に受講開始！<br>
+                            <span class="heading-strong">4ヶ月で初案件獲得！フリーランスに！</span>
+                        </h4>
+                        <div class="page-item">
+                            <div class="page-item-student">
+                                <img src="img/portfolio3.png" alt="受講生">
+                                <p class="student-name">よしのりさん</p>
+                                <p class="student-info">20代 ／元会社員／１児のパパ</p>
+                                <p class="student-comment">
+                                    副業からフリーランスになりたいと思って入会しました。優しく向上心が高い方が多いので、初心者の私でも挫折せずに進められましたし、今までの自分からは考えられない全く別の職種が広がり、考え方や人生観も変わりました。
+                                </p>
+                            </div>
+                            <div class="page-item-achievement">
+                                <a class="achievement-img" href="https://pronavi-board.noe-p.com/" target="_blank"><img
+                                        src="img/achievements3.png" alt="実績"></a>
+                                <div class="achievement-link">
+                                    <a class="link_text" href="https://pronavi-board.noe-p.com/"
+                                        target="_blank">サイトへ</a>
+                                    <a class="link-text" href="https://pronavi-board.noe-p.com/" target="_blank"><img
+                                            class="link-icon" src="img/open.png" alt="リンクアイコン"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="student-page" style="z-index: 1;">
+                        <h4 class="heading">育休中に子育てと家事を両立しながら学習<br>
+                            <span class="heading-strong">５ヶ月間で初案件獲得！副業で月収〇〇達成！</span>
+                        </h4>
+                        <div class="page-item">
+                            <div class="page-item-student">
+                                <img src="img/portfolio4.png" alt="受講生">
+                                <p class="student-name">ゆいなさん</p>
+                                <p class="student-info">20代 ／会社員 ／１児のママ</p>
+                                <p class="student-comment">
+                                    何人かとお話ししてみて、信用できる！と感じたので入会しましたが、案件獲得までこんなにサポートしてもらえるなんてびっくりです！みなさんと出会えて本当に幸せです！
+                                </p>
+                            </div>
+                            <div class="page-item-achievement">
+                                <a class="achievement-img" href="https://pronavi-board.noe-p.com/" target="_blank"><img
+                                        src="img/achievements4.png" alt="実績"></a>
+                                <div class="achievement-link">
+                                    <a class="link-text" href="https://pronavi-board.noe-p.com/"
+                                        target="_blank">サイトへ</a>
+                                    <a class="link-text" href="https://pronavi-board.noe-p.com/" target="_blank"><img
+                                            class="link-icon" src="img/open.png" alt="リンクアイコン"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <h4 class="">受講生の制作物はコチラからご覧いただけます</h4>
+            <a class="link-btn-blue" href="https://pronavi-board.noe-p.com/" target="_blank">
+                <p>PortNaviへ</p>
+                <img src="img/arrow-icon.png" alt="矢印">
+            </a>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- cta1 -->
+        <!-- ========================================== -->
+        <section id="cta1">
+            <p class="cta_lead">理想の働き方を叶える、あなた専用のロードマップを作成！<br>
+                お気軽にご相談ください</p>
+            <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">
+                <p>無料カウンセリングを予約する</p>
+                <img src="img/arrow-icon.png" alt="矢印">
+            </a>
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- teachers -->
+        <!-- ========================================== -->
+        <section id="teachers">
+            <div class="teachers-area">
+                <div class="teachers-header">
+                    <div class="section-header">
+                        <h2 class="section-title">あなたの<span class="blue"><span class="large">「成長」</span></span>に<br
+                                class="sp-br"><span class="blue">本気でコミット</span>する</h2>
+                    </div>
+                    <h3 class="lead">Web制作の第一線で活躍する<br class="sp-br">現役エンジニアのプロ集団</h3>
+                </div>
+                <ul class="teacher-list-area">
+                    <li class="list">
+                        <div class="list-img">
+                            <img src="img/teacher.jpg" alt="講師A">
+                        </div>
+                        <div class="list-content">
+                            <h4 class="teacher-name">加藤 夕騎</h4>
+                            <p class="point">お客様1人ひとりの目的や課題に合った組み合わせをカリキュラムとして提供します。</p>
+                            <p class="comment">
+                                プロナビは複数の最適化されたプログラミング学習トレーニングの中から、お客さま一人ひとりの目的や課題に合った組み合わせをカリキュラムとして提供します。それぞれのトレーニングを構築する際は、学術的な調査はもちろんのこと、学習の中で本当に効果があるのかをコンサルタント・お客さまなど様々な視点から十分な時間をかけて検証した上で展開しています。四半期に一度、カリキュラムを全社的にアップデートするイベントを設けており、トレーニングやカリキュラムを常に進化させ続けています。
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="list">
+                        <div class="list-img">
+                            <img src="img/teacher1.jpg" alt="講師B">
+                        </div>
+                        <div class="list-content">
+                            <h4 class="teacher-name">TETSU</h4>
+                            <p class="point">その人にとって継続可能かつ、着実にスキルをつけられるような学習方法を一緒に探し続けます。</p>
+                            <p class="comment">
+                                プログラミング学習は筋トレに似ていると思います。人それぞれ体格も違えば、やるべき事も変わってくる。間違ったやり方で筋トレをし続けても結果には繋がりにくい。正しいやり方と継続がとても重要です。その人にとって継続可能かつ、しっかり最適な負荷をかけ続ける学習方法を一緒に探し続けます！
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="list">
+                        <div class="list-img">
+                            <img src="img/teacher2.jpg" alt="講師C">
+                        </div>
+                        <div class="list-content">
+                            <h4 class="teacher-name">YURIKO</h4>
+                            <p class="point">プログラミングスキルを習得するには環境×覚悟が必要だと思っています。</p>
+                            <p class="comment">
+                                世の中には数多くの学習教材や学習方法が溢れていますが、プロナビはあなたの目標を最短で達成するためにはどの手段を取ることが正しいのか、忙しいあなたでも学習が継続できるような仕組みや環境を提供します。「スキルを伸ばす」その覚悟を持っていただければ、私たちコンサルタント一同、全力で、最短でプログラミングスキルを伸ばすサポートをさせていただきます！
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="list">
+                        <div class="list-img">
+                            <img src="img/teacher3.jpg" alt="講師D">
+                        </div>
+                        <div class="list-content">
+                            <h4 class="teacher-name">AOKI</h4>
+                            <p class="point">卒業後も自分の力で成長していけるような学習スキルも同時に身につけて欲しい。</p>
+                            <p class="comment">
+                                プログラミングは多くの言語があり、使われる言語の変化も早いです。そのため、実際に仕事をするときに新しい知識が必要になってくることもあるため、ただ覚えるだけではなく、自分の力で学習を進めていく能力も半年間を通して身につけていただきたいと思っています。
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="instagram-area">
+                <h3 class="lead">このスクールの“中の人”<br class="sp-br">が伝える、日々のリアル。</h3>
+                <p class="instagram-area-text">受講生とのエピソードや<br class="sp-br">プログラミングについて、<br>
+                    「仲間と共に創り上げるスクール」の<br class="sp-br">今をお届けしています。<br>
+                    ぜひInstagramで、ProNaviの空気を<br class="sp-br">感じてください。</p>
+                <div class="instagram-post">
+                    <div class="post-kakashi">
+                        <blockquote class="instagram-media"
+                            data-instgrm-permalink="https://www.instagram.com/p/DRE6vkBkztF/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                            <div style="padding:16px;"> <a
+                                    href="https://www.instagram.com/p/DRE6vkBkztF/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                    style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                                    target="_blank">
+                                    <div style=" display: flex; flex-direction: row; align-items: center;">
+                                        <div
+                                            style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                        </div>
+                                        <div
+                                            style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                            <div
+                                                style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                            </div>
+                                            <div
+                                                style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="padding: 19% 0;"></div>
+                                    <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg
+                                            width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                            xmlns="https://www.w3.org/2000/svg"
+                                            xmlns:xlink="https://www.w3.org/1999/xlink">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                                    <g>
+                                                        <path
+                                                            d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg></div>
+                                    <div style="padding-top: 8px;">
+                                        <div
+                                            style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                                            この投稿をInstagramで見る</div>
+                                    </div>
+                                    <div style="padding: 12.5% 0;"></div>
+                                    <div
+                                        style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+                                        <div>
+                                            <div
+                                                style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+                                            </div>
+                                            <div
+                                                style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+                                            </div>
+                                            <div
+                                                style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left: 8px;">
+                                            <div
+                                                style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+                                            </div>
+                                            <div
+                                                style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left: auto;">
+                                            <div
+                                                style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+                                            </div>
+                                            <div
+                                                style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+                                            </div>
+                                            <div
+                                                style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+                                        </div>
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                                        </div>
+                                    </div>
+                                </a>
+                                <p
+                                    style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                                    <a href="https://www.instagram.com/p/DRE6vkBkztF/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                        style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+                                        target="_blank">かかし｜プログラミング×教育️(@kakashi.programming.lab)がシェアした投稿</a>
+                                </p>
+                            </div>
+                        </blockquote>
+                        <script async src="//www.instagram.com/embed.js"></script>
+                    </div>
+                    <div class="post-iruka">
+                        <blockquote class="instagram-media"
+                            data-instgrm-permalink="https://www.instagram.com/p/DMpsdXLS0qW/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                            <div style="padding:16px;"> <a
+                                    href="https://www.instagram.com/p/DMpsdXLS0qW/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                    style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                                    target="_blank">
+                                    <div style=" display: flex; flex-direction: row; align-items: center;">
+                                        <div
+                                            style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                        </div>
+                                        <div
+                                            style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                            <div
+                                                style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                            </div>
+                                            <div
+                                                style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="padding: 19% 0;"></div>
+                                    <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg
+                                            width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                            xmlns="https://www.w3.org/2000/svg"
+                                            xmlns:xlink="https://www.w3.org/1999/xlink">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                                    <g>
+                                                        <path
+                                                            d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg></div>
+                                    <div style="padding-top: 8px;">
+                                        <div
+                                            style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                                            この投稿をInstagramで見る</div>
+                                    </div>
+                                    <div style="padding: 12.5% 0;"></div>
+                                    <div
+                                        style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+                                        <div>
+                                            <div
+                                                style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+                                            </div>
+                                            <div
+                                                style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+                                            </div>
+                                            <div
+                                                style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left: 8px;">
+                                            <div
+                                                style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+                                            </div>
+                                            <div
+                                                style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left: auto;">
+                                            <div
+                                                style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+                                            </div>
+                                            <div
+                                                style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+                                            </div>
+                                            <div
+                                                style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+                                        </div>
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                                        </div>
+                                    </div>
+                                </a>
+                                <p
+                                    style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                                    <a href="https://www.instagram.com/p/DMpsdXLS0qW/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                        style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+                                        target="_blank">いるか｜ワンランク上の仕事と日常(@iruka.freelance)がシェアした投稿</a>
+                                </p>
+                            </div>
+                        </blockquote>
+                        <script async src="//www.instagram.com/embed.js"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- metaleaf -->
+        <!-- ========================================== -->
+        <section id="metaleaf" class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    一人で<span class="blue">学習</span>して<br class="sp-br"><span class="blue"><span
+                            class="large">挫折</span></span>したあなたへ</h2>
+            </div>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="blue">未経験</span>で本当にできるか<br class="sp-br"><span class="blue"><span
+                            class="large">不安</span></span>なあなたへ
+                </h2>
+            </div>
+            <h3 class="lead">プロナビには講師陣の他に、一緒に強い意志を持って進む仲間もいます。<br>
+                そんな仲間に出会える作業会をぜひ活用してください。</h3>
+            <div class="metaleaf_area">
+                <img class="bg" src="img/metaleaf.png" alt="作業会会場">
+                <div class="feature f1" data-modal="modal1">
+                    <div class="icon">
+                        <img src="img/icon_038470_256.png" alt="ドア">
+                    </div>
+                    <p>仲間が見つかる</p>
+                </div>
+                <div class="feature f2" data-modal="modal2">
+                    <div class="icon">
+                        <img src="img/icon_071650_256.png" alt="パソコン">
+                    </div>
+                    <p>画面で一緒に解決</p>
+                </div>
+                <div class="feature f3" data-modal="modal3">
+                    <div class="icon">
+                        <img src="img/icon_053970_256.png" alt="質問会">
+                    </div>
+                    <p>初心者にやさしい</p>
+                </div>
+                <div class="feature f4" data-modal="modal4">
+                    <div class="icon">
+                        <img src="img/icon_007500_256.png
+                    " alt="メダル">
+                    </div>
+                    <p>チーム開発に挑戦</p>
+                </div>
+                <div class="feature f5" data-modal="modal5">
+                    <div class="icon">
+                        <img src="img/icon_051100_256.png" alt="案件ファイル">
+                    </div>
+                    <p>仲間と案件シェア</p>
+                </div>
+            </div>
+        </section>
+        <!-- モーダル -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <button class="close">&times;</button>
+                <div class="modal_img">
+                    <img src="img/metaleaf1.png" alt="仲間">
+                </div>
+                <div class="modal_text">
+                    <p class="modal_title">仲間に出会えて、自然と交流が生まれる</p>
+                    <p class="modal_comment">作業会では、気軽なおしゃべりから情報交換まで、誰でも参加OK。<br>
+                        名前の横に“学習フェーズ”が表示されているので、同じレベルの仲間も見つけやすい。<br>
+                        一緒に頑張れる仲間ができると、学習がもっと楽しくなります。</p>
+                </div>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <button class="close">&times;</button>
+                <div class="modal_img">
+                    <img src="img/metaleaf5.png" alt="画面共有">
+                </div>
+                <div class="modal_text">
+                    <p class="modal_title">画面共有で質問もサポートもスムーズ</p>
+                    <p class="modal_comment">コードの書き方がわからない時も、画面共有を使えばその場で一緒に確認できます。<br>
+                        お互いの画面を見ながら話せるから、言葉だけでは伝えにくい部分もすぐ解決。<br>
+                        初心者でも安心して質問できる環境です。</p>
+                </div>
+            </div>
+        </div>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <button class="close">&times;</button>
+                <div class="modal_img">
+                    <img src="img/metaleaf2.png" alt="初心す初心者">
+                </div>
+                <div class="modal_text">
+                    <p class="modal_title">初心者講習会で安心スタート</p>
+                    <p class="modal_comment">「こんな質問してもいいのかな…？」という不安はいりません。<br>
+                        講師や経験者がやさしくゆっくり教えてくれる、初心者向けの安心スペースです。<br>
+                        不明点をそのままにせず、着実に前へ進めます。</p>
+                </div>
+            </div>
+        </div>
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <button class="close">&times;</button>
+                <div class="modal_img">
+                    <img src="img/metaleaf4.jpg" alt="ハッカソン">
+                </div>
+                <div class="modal_text">
+                    <p class="modal_title">ハッカソンでチーム開発を体験</p>
+                    <p class="modal_comment">3人1組でチームを組み、テーマに沿ったアイデアを形にして発表！<br>
+                        投票で優勝チームを決めるイベント形式だから、楽しみながら開発経験がつめます。<br>
+                        チームで作る面白さ・やり切る達成感が味わえる機会です。</p>
+                </div>
+            </div>
+        </div>
+        <div id="modal5" class="modal">
+            <div class="modal-content">
+                <button class="close">&times;</button>
+                <div class="modal_img">
+                    <img src="img/metaleaf3.png" alt="案件">
+                </div>
+                <div class="modal_text">
+                    <p class="modal_title">案件も仲間と協力して進められる</p>
+                    <p class="modal_comment">「案件を取ったけれど手が足りない…」そんな時も心配なし。<br>
+                        作業会で出会った信頼できる仲間に協力をお願いすることができます。<br>
+                        一人では難しいことも、仲間と一緒なら乗り越えられます。</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ========================================== -->
+        <!-- cta2 -->
+        <!-- ========================================== -->
+        <section id="cta2">
+            <p class="cta_lead">環境は整っています！<br>
+                理想の働き方を叶える一歩を踏み出しましょう</p>
+            <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">
+                <p>無料カウンセリングを予約する</p>
+                <img src="img/arrow-icon.png" alt="矢印">
+            </a>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- curriculum -->
+        <!-- ========================================== -->
+        <section id="curriculum" class="container">
+
+            <h2 class="section-title">在宅ワークを目指す<span class="blue"><span class="large">5</span>Step</span></h2>
+            <h3 class="lead">プログラミング上達には、生産性と学習時間の最大化が不可欠。<br>
+                プロナビは弱点分析と目的に沿った最適学習、そして毎日のコーチングで“続けられる環境”をつくり、あなたの成長を最速化します。</h3>
+
+
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="circle-wrap  orange">
+                            <img src="img/step1.jpg" alt="step1">
+                            <p class="step-title">Step 1</p>
+                            <p class="step-sub">無料カウンセリング</p>
+                        </div>
+                        <p class="step-text">
+                            まずは気軽に雑談でもOK！<br>
+                            今の悩みや「ちょっとやってみたいかも」を聞かせてください。 あなたのペースに合わせて、 一緒に“成長のロードマップ”を描きます。不安がワクワクに変わる、そんな時間をお約束します！
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="circle-wrap  blue">
+                            <img src="img/step2.jpg" alt="step2">
+                            <p class="step-title">Step 2</p>
+                            <p class="step-sub">スタートミーティング</p>
+                        </div>
+                        <p class="step-text">
+                            現在のスキルレベルの確認と学習方針を決めた後、実際に授業をスタートするためにあなた専属のコーチが選ばれます。プログラミングスキルの向上には毎日の学習が欠かせません。日々のやりとりはLINEでスムーズに。迷わず、効率的にスキルを伸ばせます！
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="circle-wrap  orange">
+                            <img src="img/step3.jpg" alt="step3">
+                            <p class="step-title">Step 3</p>
+                            <p class="step-sub">週１回の授業開始</p>
+                        </div>
+                        <p class="step-text">週1回の専属コーチとの授業であなたの成長度合いや成長ポイントをチェック！課題で理解できなかった箇所もしっかり解説し、次回の授業までの課題を設定します。
+                        </p>
+
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="circle-wrap  blue">
+                            <img src="img/step4.jpg" alt="step4">
+                            <p class="step-title">Step 4</p>
+                            <p class="step-sub">案件同行</p>
+                        </div>
+                        <p class="step-text">
+                            スキルが身についた後は、案件獲得を目指して実際に動いていきます。営業の同行、代行もプロの営業マンが行いあなたの案件獲得をお手伝いします！ </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="circle-wrap  orange">
+                            <img src="img/step5.jpg" alt="step5">
+                            <p class="step-title">Step 5</p>
+                            <p class="step-sub">案件獲得</p>
+                        </div>
+                        <p class="step-text">
+                            自宅にいながら、あなたの学んだスキルで報酬が発生。副業・フリーランスへの第一歩を踏み出します！案件獲得後もデザインの学習など、スキルアップできるカリキュラムもあります。</p>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev">
+                    <img src="img/student-arrow.svg" alt="">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="img/student-arrow2.svg" alt="">
+                </div>
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+
+            <!-- 料金 -->
+            <div class="price">
+                <p class="price-title">料金</p>
+                <ul class="price-list left">
+                    <li>24時間質問対応</li>
+                    <li>あなただけの学習スケジュール作成</li>
+                </ul>
+                <ul class="price-list right ">
+                    <li>定期的な講義で苦手を克服</li>
+                    <li>学習スケジュール作成と習慣化をサポート</li>
+                </ul>
+
+                <p>総額<span>550,000</span>円（税込）</p>
+                <div class="price-line"></div>
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- question -->
+        <!-- ========================================== -->
+        <section id="question" class="container">
+
+            <h5>よくある質問</h5>
+            <p class="sub-title">Q&A</p>
+
+            <ul class="question-list">
+                <li class="question">
+                    <img src="img/question_icn.png" alt="">
+                    従来の従来のプログラミングスクールとは何が違いますか？
+                </li>
+                <li class="answer">
+                    <img src="img/answer_icn.png" alt="">
+                    プログラミングスクールの多くは「コードを知る」ことに主眼を置いていますが、プロナビでは模写コーディングを含む複数のトレーニングを組み合わせてお客様ごとの最適カリキュラムをご提案します。また、日々の学習を支援する多彩なサポートを用意しています。
+                </li>
+                <li class="question">
+                    <img src="img/question_icn.png" alt="">
+                    どんな教材を使用しますか？
+                </li>
+                <li class="answer">
+                    <img src="img/answer_icn.png" alt="">
+                    当社が厳選した市販教材とオリジナル教材の中から、お客様にとって最適な組み合わせをご提案します。どのような教材を用いるかは無料カウンセリングにてお問い合わせください。
+                </li>
+                <li class="question">
+                    <img src="img/question_icn.png" alt="">
+                    専属コンサルタントは変えられますか？
+                </li>
+                <li class="answer">
+                    <img src="img/answer_icn.png" alt="">
+                    可能です。ご希望の場合は、公式事務局LINEまでお問い合わせください。
+                </li>
+                <li class="question">
+                    <img src="img/question_icn.png" alt="">
+                    パソコンは必要ですか？
+                </li>
+                <li class="answer">
+                    <img src="img/answer_icn.png" alt="">
+                    プログラミングの学習ではパソコンは必須になります。貸し出しなどは行っていないため、ご用意必要になります。
+                </li>
+                <li class="question">
+                    <img src="img/question_icn.png" alt="">
+                    学習時間が確保できるか不安ですが、大丈夫ですか？
+                </li>
+                <li class="answer">
+                    <img src="img/answer_icn.png" alt="">
+                    ご安心ください。多くの方が最初は不安を感じていますが、専属コンサルタントのタイムマネジメントやモチベーション管理などのきめ細かいサポートで、実際に激務の中で働いている方もプログラミングスキルを向上されています。
+                </li>
+                <li class="question">
+                    <img src="img/question_icn.png" alt="">
+                    校舎に通うのが難しいのですが、大丈夫ですか？
+                </li>
+                <li class="answer">
+                    <img src="img/answer_icn.png" alt="">
+                    基本的にオンライン受講となっています。対面受講の場合と同等のプログラミングスキル上達の実績を上げております。
+                </li>
+            </ul>
+
+            <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">詳しく知りたい方はこちら</a>
+
+        </section>
+
+    </main>
+
+    <footer class="container">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo2.png" alt="">
+            </div>
+            <div class="sns-links">
+                <a href="https://www.instagram.com/kakashi.programming.lab" class="instagram">かかし</a>
+                <a href="https://www.instagram.com/iruka.freelance" class="instagram">いるか</a>
+                <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="line">無料カウンセリングを予約</a>
+            </div>
+        </div>
+        <small>© COPYRIGHT NOE Co.ltd</small>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: false,
+
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows-
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
 </body>
+
 </html>
