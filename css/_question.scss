@@ -57,6 +57,9 @@
 
                 dd {
                     width: 96%;
+                   @include sp{
+                    padding-left: 15px;
+                   }
                 }
             }
 
@@ -74,6 +77,10 @@
                     content: "+";
                     position: absolute;
                     right: 10px;
+
+                    @include sp{
+                        display: none;
+                    }
                 }
             }
         }
