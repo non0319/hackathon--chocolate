@@ -33,20 +33,21 @@
         border-radius: 0 16px 16px 0;
         padding: 40px;
         text-align: center;
-        transition: transform 1.4s cubic-bezier(.25,.8,.25,1), box-shadow 1.4s ease;
+        transition: transform 0.6s ease-out, box-shadow 0.6s ease;
         transform-origin: left center;
         transform-style: preserve-3d;
         backface-visibility: hidden;
         opacity: 1;
         cursor: pointer;
 
-        &:hover {transform: rotateY(-10deg) skewY(3deg);
-                box-shadow: -6px 0 15px rgba(0,0,0,0.1);
+        &:hover {
+            transform: rotateY(-12deg) skewY(4deg);
+            box-shadow: -6px 0 15px rgba(0, 0, 0, 0.1);
         }
 
-        &.flip {
-            transform: rotateY(-180deg) skewY(12deg);
-            box-shadow: -6px 0 15px rgba(0,0,0,0.15); /* 弱め影 */
+        .flipped {
+            transform: rotateY(-150deg);
+            opacity: 1; // 完全に消さない
         }
 
         &::before {
@@ -138,8 +139,9 @@
 
 
 .student-page.flip {
-    transform: rotateY(-180deg) skewY(10deg); /* ← skewはお好みで調整可 */
-    opacity: 0;
+    transform: rotateY(-180deg) skewY(10deg);
+    /* ← skewはお好みで調整可 */
+    opacity: 0.3;
 }
 
 .link-btn-blue {

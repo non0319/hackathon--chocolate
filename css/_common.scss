@@ -61,45 +61,37 @@ img {
 .section-header {
     text-align: center; // h2を中央に配置
     margin-bottom: 20px;
-}
 
-// font-size 
-.section-title {
-    font-size: 2.5rem;
-    position: relative;
-    padding-bottom: $clip-depth + 10px;
+    // font-size 
+    .section-title {
+        font-size: 2.5rem;
+        position: relative;
+        padding-bottom: $clip-depth + 10px;
 
+        @include sp {
+            font-size: 1.75rem;
+        }
 
-    // 線の描画
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0; 
-        width: 100%; 
-        height: $svg-height + px;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 #{$line-width-base} #{$svg-height}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 L325,1 L375,31 L425,1 L750,1' stroke='%234B80AA' stroke-width='2' fill='none'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
+        // 線の描画
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: $svg-height + px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 #{$line-width-base} #{$svg-height}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 L325,1 L375,31 L425,1 L750,1' stroke='%234B80AA' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
 
-    .blue {
-        color: $line-color;
-    }
+        .blue {
+            color: $line-color;
+        }
 
-    .large {
-        font-size: 64px;
-    }
-}
-
-
-// font-size
-.section-title {
-    font-size: 2.5rem;
-    text-align: center;
-
-    @include sp {
-        font-size: 1.75rem;
+        .large {
+            font-size: 64px;
+        }
     }
 }
 
