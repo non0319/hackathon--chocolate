@@ -110,7 +110,7 @@ img {
     text-align: center;
 
     @include sp {
-        padding-inline: 16px;
+        font-size: 1rem;
     }
 }
 
@@ -120,6 +120,14 @@ img {
 
     @include sp {
         display: block;
+    }
+}
+
+.pc-br{
+    display: block;
+
+    @include sp{
+        display: none;
     }
 }
 
