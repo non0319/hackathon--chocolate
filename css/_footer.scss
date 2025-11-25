@@ -2,17 +2,26 @@
 
 footer {
     max-width: 1120px;
+
     .footer-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include sp {
+            flex-direction: column;
+        }
     }
 
     .sns-links {
 
-        a{
+        a {
             padding: 20px;
             margin-left: 20px;
+
+           @include sp{
+            margin-inline: 5px;
+           }
         }
 
         p {
@@ -28,7 +37,7 @@ footer {
             .fa-instagram {
                 padding-left: 5px;
                 align-items: center;
-                color:white;
+                color: white;
             }
         }
 
@@ -51,14 +60,13 @@ footer {
         }
     }
 
-    
     small {
         display: block;
         text-align: center;
         padding-block: 20px;
 
-        @include sp{
-          margin-bottom: 70px;
+        @include sp {
+            margin-bottom: 70px;
         }
     }
 
@@ -67,7 +75,7 @@ footer {
 
         @include sp {
             // display: block;
-              display: flex !important;
+            display: flex !important;
             background-color: #79C2B6;
             border-radius: 20px;
             max-width: 600px;
@@ -99,5 +107,4 @@ footer {
             }
         }
     }
-
 }

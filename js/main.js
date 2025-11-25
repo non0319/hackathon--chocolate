@@ -513,7 +513,7 @@ $(window).on('scroll load', function () {
       var target = $(this).offset().top;
 
       // 下スクロールで画面下から200px通過したタイミング
-      if (scroll > target - windowHeight -500) {
+      if (scroll > target - windowHeight -750) {
         if (!$el.hasClass('roll-in')) {
           setTimeout(function () {
             $el.addClass('roll-in');
@@ -544,7 +544,7 @@ $(window).scroll(function () {
     return;
   }
 
-  if ($(this).scrollTop() > 200) { // SPなら200px以上で表示
+  if ($(this).scrollTop() > 1300) { // SPなら200px以上で表示
     pagetop.fadeIn();
   } else {
     pagetop.fadeOut();
