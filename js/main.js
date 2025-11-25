@@ -383,35 +383,43 @@ $(document).ready(function () {
 /*=================================================
   achievements
 ===================================================*/
-const pages = document.querySelectorAll('.student-page');
 let currentPage = 0;
+const pages = document.querySelectorAll(".student-page");
 
 pages.forEach((page, i) => {
   page.style.zIndex = pages.length - i;
 });
 
 function flipNextPage() {
-  if (currentPage < pages.length) {
-    pages[currentPage].classList.add('flip');
-    currentPage++;
-  }
+  const page = pages[currentPage];
+  if (!page) return;
 
-  // 最後までめくったら自動で戻す
+  // めくるアニメーション開始
+  page.classList.add("flip");
+
+  // 2.2s 後にページを後ろに回す（transition と合わせて！）
+  setTimeout(() => {
+    page.style.zIndex = 0;
+  }, 2200);
+
+  currentPage++;
+
+  // 最後まで行ったらリセット
   if (currentPage === pages.length) {
     setTimeout(() => {
-      pages.forEach((page, i) => {
-        page.classList.remove('flip');
-        page.style.zIndex = pages.length - i;
+      pages.forEach((p, i) => {
+        p.classList.remove("flip");
+        p.style.zIndex = pages.length - i;
       });
       currentPage = 0;
-    }, 1500); // アニメ完了後に戻す
+    }, 2500);
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const book = document.querySelector('.book-item');
+document.addEventListener("DOMContentLoaded", function () {
+  const book = document.querySelector(".book-item");
   if (book) {
-    book.addEventListener('click', flipNextPage);
+    book.addEventListener("click", flipNextPage);
   }
 });
 

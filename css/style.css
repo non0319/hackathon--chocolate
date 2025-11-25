@@ -55,13 +55,17 @@ img {
   text-align: center;
   margin-bottom: 20px;
 }
-
-.section-title {
+.section-header .section-title {
   font-size: 2.5rem;
   position: relative;
   padding-bottom: 40px;
 }
-.section-title::after {
+@media (max-width: 768px) {
+  .section-header .section-title {
+    font-size: 1.75rem;
+  }
+}
+.section-header .section-title::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -72,21 +76,11 @@ img {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-.section-title .blue {
+.section-header .section-title .blue {
   color: #4B80AA;
 }
-.section-title .large {
+.section-header .section-title .large {
   font-size: 64px;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-}
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 1.75rem;
-  }
 }
 
 .lead {
@@ -508,8 +502,7 @@ footer .line-sp {
 .mainvisual .mv-right ul.image-slider li img {
   min-width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .mainvisual .mv-right .sit-img {
@@ -569,8 +562,7 @@ footer .line-sp {
     right: 0;
   }
   .mainvisual .mv-right ul.image-slider li img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mainvisual .mv-right .sit-img {
     max-width: 10%;
@@ -596,7 +588,6 @@ footer .line-sp {
   background-color: white;
   padding: 80px;
   border-radius: 50%;
-  width: -moz-fit-content;
   width: fit-content;
   box-shadow: 30px 0px 0px 0px rgba(239, 239, 239, 0.62);
 }
@@ -876,8 +867,7 @@ footer .line-sp {
 .card-image-wrapper .card-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-text-content {
@@ -1021,7 +1011,7 @@ footer .line-sp {
   border-radius: 0 16px 16px 0;
   padding: 40px;
   text-align: center;
-  transition: transform 1.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 1.4s ease;
+  transition: transform 0.6s ease-out, box-shadow 0.6s ease;
   transform-origin: left center;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -1029,12 +1019,12 @@ footer .line-sp {
   cursor: pointer;
 }
 .book-item .student-page:hover {
-  transform: rotateY(-10deg) skewY(3deg);
+  transform: rotateY(-12deg) skewY(4deg);
   box-shadow: -6px 0 15px rgba(0, 0, 0, 0.1);
 }
-.book-item .student-page.flip {
-  transform: rotateY(-180deg) skewY(12deg);
-  box-shadow: -6px 0 15px rgba(0, 0, 0, 0.15); /* 弱め影 */
+.book-item .student-page .flipped {
+  transform: rotateY(-150deg);
+  opacity: 1;
 }
 .book-item .student-page::before {
   content: "";
@@ -1084,8 +1074,7 @@ footer .line-sp {
   width: 100%;
   max-width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   filter: drop-shadow(6px 6px 20px rgba(0, 0, 0, 0.15));
 }
 .book-item .student-page .page-item .page-item-achievement .achievement-link {
@@ -1105,8 +1094,9 @@ footer .line-sp {
 }
 
 .student-page.flip {
-  transform: rotateY(-180deg) skewY(10deg); /* ← skewはお好みで調整可 */
-  opacity: 0;
+  transform: rotateY(-180deg) skewY(10deg);
+  /* ← skewはお好みで調整可 */
+  opacity: 0.3;
 }
 
 .link-btn-blue {
@@ -1124,8 +1114,7 @@ footer .line-sp {
 .link-btn-blue img {
   width: 40px;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 #teachers {
@@ -1201,8 +1190,7 @@ footer .line-sp {
 .list .list-img img {
   width: 100%;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .list .list-content {
   width: 68%;
@@ -1301,8 +1289,7 @@ footer .line-sp {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.5;
   z-index: 1;
 }
@@ -1341,8 +1328,7 @@ footer .line-sp {
 #metaleaf .metaleaf_area .feature .icon img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 #metaleaf .metaleaf_area .feature p {
   font-size: 0.625rem;
@@ -1438,8 +1424,7 @@ footer .line-sp {
   width: 100%;
   height: 50%;
   border-radius: 10px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-top: 16px;
 }
 .modal-content .modal_text {
@@ -1453,12 +1438,12 @@ footer .line-sp {
 }
 
 #cta1, #cta2 {
-  padding: 40px 0;
   margin-top: 100px;
-  text-align: center;
+  margin-bottom: 160px;
 }
-#cta1 p, #cta2 p {
+#cta1 .cta_lead, #cta2 .cta_lead {
   font-size: 1.125rem;
+  text-align: center;
   margin-bottom: 40px;
 }
 
@@ -1485,8 +1470,7 @@ footer .line-sp {
   height: 250px;
   position: relative;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: translateY(-25px);
 }
 #curriculum .swiper .circle-wrap .step-title {
@@ -1592,8 +1576,7 @@ footer .line-sp {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;
