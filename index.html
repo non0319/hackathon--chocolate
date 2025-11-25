@@ -7,11 +7,11 @@
     <title>ProNavi</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP:wght@100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -883,8 +883,9 @@
         <!-- curriculum -->
         <!-- ========================================== -->
         <section id="curriculum" class="container">
-
-            <h2 class="section-title">在宅ワークを目指す<span class="blue"><span class="large">5</span>Step</span></h2>
+            <div class="section-header">
+                <h2 class="section-title">在宅ワークを目指す<span class="blue"><span class="large">5</span>Step</span></h2>
+            </div>
             <h3 class="lead">プログラミング上達には、生産性と学習時間の最大化が不可欠。<br>
                 プロナビは弱点分析と目的に沿った最適学習、そして毎日のコーチングで“続けられる環境”をつくり、あなたの成長を最速化します。</h3>
 
@@ -907,7 +908,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="circle-wrap  blue">
+                        <div class="circle-wrap  step-blue">
                             <img src="img/step2.jpg" alt="step2">
                             <p class="step-title">Step 2</p>
                             <p class="step-sub">スタートミーティング</p>
@@ -919,7 +920,7 @@
 
                     <div class="swiper-slide">
                         <div class="circle-wrap  orange">
-                            <img src="img/step3.jpg" alt="step3">
+                            <img src="img/step3.png" alt="step3">
                             <p class="step-title">Step 3</p>
                             <p class="step-sub">週１回の授業開始</p>
                         </div>
@@ -929,8 +930,8 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="circle-wrap  blue">
-                            <img src="img/step4.jpg" alt="step4">
+                        <div class="circle-wrap  step-blue">
+                            <img src="img/STEP4.jpeg" alt="step4">
                             <p class="step-title">Step 4</p>
                             <p class="step-sub">案件同行</p>
                         </div>
@@ -965,100 +966,245 @@
             <!-- 料金 -->
             <div class="price">
                 <p class="price-title">料金</p>
-                <ul class="price-list left">
-                    <li>24時間質問対応</li>
-                    <li>あなただけの学習スケジュール作成</li>
-                </ul>
-                <ul class="price-list right ">
-                    <li>定期的な講義で苦手を克服</li>
-                    <li>学習スケジュール作成と習慣化をサポート</li>
-                </ul>
+                <div class="lists">
+                    <ul class="price-list left">
+                        <li>24時間質問対応</li>
+                        <li>あなただけの学習スケジュール作成</li>
+                    </ul>
+                    <ul class="price-list right ">
+                        <li>定期的な講義で苦手を克服</li>
+                        <li>学習スケジュール作成と習慣化をサポート</li>
+                    </ul>
+                </div>
 
-                <p>総額<span>550,000</span>円（税込）</p>
+                <p class="amount">総額<span>550,000</span>円（税込）</p>
                 <div class="price-line"></div>
             </div>
 
         </section>
 
+        <!-- curriculumレスポンシブ -->
+        <section id="sp-curriculum" class="container">
+            <div class="section-header">
+                <h2 class="section-title">在宅ワークを目指す<span class="blue"><span class="large">5</span>Step</span></h2>
+            </div>
+            <h3 class="lead">プログラミング上達には、生産性と学習時間の最大化が不可欠。<br>
+                プロナビは弱点分析と目的に沿った最適学習、そして毎日のコーチングで“続けられる環境”をつくり、あなたの成長を最速化します。</h3>
 
+
+            <div class="sp-step left">
+                <div class="sp-step-img orange">
+                    <img src="img/step1.jpg" alt="step1">
+                </div>
+
+                <div class="sp-step-text left">
+                    <p class="step-title">Step 1</p>
+                    <p class="step-sub">無料カウンセリング</p>
+                    <p class="step-text">
+                        まずは気軽に雑談でもOK！<br>
+                        今の悩みや「ちょっとやってみたいかも」を聞かせてください。 あなたのペースに合わせて、 一緒に“成長のロードマップ”を描きます。不安がワクワクに変わる、そんな時間をお約束します！
+                    </p>
+                </div>
+            </div>
+            <div class="sp-step">
+                <div class="sp-step-img  step-blue">
+                    <img src="img/step2.jpg" alt="step2">
+                </div>
+
+                <div class="sp-step-text right">
+                    <p class="step-title">Step 2</p>
+                    <p class="step-sub">スタートミーティング</p>
+                    <p class="step-text">
+                        現在のスキルレベルの確認と学習方針を決めた後、実際に授業をスタートするためにあなた専属のコーチが選ばれます。プログラミングスキルの向上には毎日の学習が欠かせません。日々のやりとりはLINEでスムーズに。迷わず、効率的にスキルを伸ばせます！
+                    </p>
+                </div>
+            </div>
+            <div class="sp-step left">
+                <div class="sp-step-img orange">
+                    <img src="   " alt="step3">
+                </div>
+
+                <div class="sp-step-text left">
+                    <p class="step-title">Step 3</p>
+                    <p class="step-sub">週１回の授業開始</p>
+                    <p class="step-text">週1回の専属コーチとの授業であなたの成長度合いや成長ポイントをチェック！課題で理解できなかった箇所もしっかり解説し、次回の授業までの課題を設定します。</p>
+                </div>
+            </div>
+            <div class="sp-step">
+                <div class="sp-step-img step-blue ">
+                    <img src="img/step4.jpg" alt="step4">
+                </div>
+
+                <div class="sp-step-text right">
+                    <p class="step-title">Step 4</p>
+                    <p class="step-sub">案件同行</p>
+                    <p class="step-text">スキルが身についた後は、案件獲得を目指して実際に動いていきます。営業の同行、代行もプロの営業マンが行いあなたの案件獲得をお手伝いします！ </p>
+                </div>
+            </div>
+            <div class="sp-step left">
+                <div class="sp-step-img orange">
+                    <img src="img/step5.jpg" alt="step5">
+                </div>
+
+                <div class="sp-step-text left">
+                    <p class="step-title">Step 5</p>
+                    <p class="step-sub">案件獲得</p>
+                    <p class="step-text">
+                        自宅にいながら、あなたの学んだスキルで報酬が発生。副業・フリーランスへの第一歩を踏み出します！案件獲得後もデザインの学習など、スキルアップできるカリキュラムもあります。</p>
+                </div>
+            </div>
+
+            <!-- 料金 -->
+            <div class="price">
+                <div class="title">
+                    <p class="price-title">料金</p>
+                </div>
+
+                <div class="lists">
+                    <ul class="price-list left">
+                        <li>24時間質問対応</li>
+                        <li>あなただけの学習スケジュール作成</li>
+                    </ul>
+                    <ul class="price-list right ">
+                        <li>定期的な講義で苦手を克服</li>
+                        <li>学習スケジュール作成と習慣化をサポート</li>
+                    </ul>
+                </div>
+
+                <p class="amount">総額<span>550,000</span>円（税込）</p>
+                <div class="price-line"></div>
+            </div>
+        </section>
 
         <!-- ========================================== -->
         <!-- question -->
         <!-- ========================================== -->
-        <section id="question" class="container">
+        <section id="question" class="container question">
 
             <h5>よくある質問</h5>
             <p class="sub-title">Q&A</p>
 
-            <ul class="question-list">
-                <li class="question">
-                    <img src="img/question_icn.png" alt="">
-                    従来の従来のプログラミングスクールとは何が違いますか？
-                </li>
-                <li class="answer">
-                    <img src="img/answer_icn.png" alt="">
-                    プログラミングスクールの多くは「コードを知る」ことに主眼を置いていますが、プロナビでは模写コーディングを含む複数のトレーニングを組み合わせてお客様ごとの最適カリキュラムをご提案します。また、日々の学習を支援する多彩なサポートを用意しています。
-                </li>
-                <li class="question">
-                    <img src="img/question_icn.png" alt="">
-                    どんな教材を使用しますか？
-                </li>
-                <li class="answer">
-                    <img src="img/answer_icn.png" alt="">
-                    当社が厳選した市販教材とオリジナル教材の中から、お客様にとって最適な組み合わせをご提案します。どのような教材を用いるかは無料カウンセリングにてお問い合わせください。
-                </li>
-                <li class="question">
-                    <img src="img/question_icn.png" alt="">
-                    専属コンサルタントは変えられますか？
-                </li>
-                <li class="answer">
-                    <img src="img/answer_icn.png" alt="">
-                    可能です。ご希望の場合は、公式事務局LINEまでお問い合わせください。
-                </li>
-                <li class="question">
-                    <img src="img/question_icn.png" alt="">
-                    パソコンは必要ですか？
-                </li>
-                <li class="answer">
-                    <img src="img/answer_icn.png" alt="">
-                    プログラミングの学習ではパソコンは必須になります。貸し出しなどは行っていないため、ご用意必要になります。
-                </li>
-                <li class="question">
-                    <img src="img/question_icn.png" alt="">
-                    学習時間が確保できるか不安ですが、大丈夫ですか？
-                </li>
-                <li class="answer">
-                    <img src="img/answer_icn.png" alt="">
-                    ご安心ください。多くの方が最初は不安を感じていますが、専属コンサルタントのタイムマネジメントやモチベーション管理などのきめ細かいサポートで、実際に激務の中で働いている方もプログラミングスキルを向上されています。
-                </li>
-                <li class="question">
-                    <img src="img/question_icn.png" alt="">
-                    校舎に通うのが難しいのですが、大丈夫ですか？
-                </li>
-                <li class="answer">
-                    <img src="img/answer_icn.png" alt="">
-                    基本的にオンライン受講となっています。対面受講の場合と同等のプログラミングスキル上達の実績を上げております。
-                </li>
-            </ul>
-
-            <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">詳しく知りたい方はこちら</a>
-
+            <div class="question-inner">
+                <details name="accordion-group">
+                    <summary>
+                        <img src="img/question_icn.png" alt="" class="icon">
+                        従来の従来のプログラミングスクールとは何が違いますか？
+                    </summary>
+                    <dl>
+                        <dt>
+                            <img src="img/answer_icn.png" alt="" class="icon">
+                        </dt>
+                        <dd>
+                            プログラミングスクールの多くは「コードを知る」ことに主眼を置いていますが、プロナビでは模写コーディングを含む複数のトレーニングを組み合わせてお客様ごとの最適カリキュラムをご提案します。また、日々の学習を支援する多彩なサポートを用意しています。
+                        </dd>
+                    </dl>
+                </details>
+                <details name="accordion-group">
+                    <summary>
+                        <img src="img/question_icn.png" alt="" class="icon">
+                        どんな教材を使用しますか？
+                    </summary>
+                    <dl>
+                        <dt>
+                            <img src="img/answer_icn.png" alt="" class="icon">
+                        </dt>
+                        <dd>
+                            当社が厳選した市販教材とオリジナル教材の中から、お客様にとって最適な組み合わせをご提案します。どのような教材を用いるかは無料カウンセリングにてお問い合わせください。
+                        </dd>
+                    </dl>
+                </details>
+                <details name="accordion-group">
+                    <summary>
+                        <img src="img/question_icn.png" alt="" class="icon">
+                        専属コンサルタントは変えられますか？
+                    </summary>
+                    <dl>
+                        <dt>
+                            <img src="img/answer_icn.png" alt="" class="icon">
+                        </dt>
+                        <dd>
+                            可能です。ご希望の場合は、公式事務局LINEまでお問い合わせください。
+                        </dd>
+                    </dl>
+                </details>
+                <details name="accordion-group">
+                    <summary>
+                        <img src="img/question_icn.png" alt="" class="icon">
+                        パソコンは必要ですか？
+                    </summary>
+                    <dl>
+                        <dt>
+                            <img src="img/answer_icn.png" alt="" class="icon">
+                        </dt>
+                        <dd>
+                            プログラミングの学習ではパソコンは必須になります。貸し出しなどは行っていないため、ご用意必要になります。
+                        </dd>
+                    </dl>
+                </details>
+                <details name="accordion-group">
+                    <summary>
+                        <img src="img/question_icn.png" alt="" class="icon">
+                        学習時間が確保できるか不安ですが、大丈夫ですか？
+                    </summary>
+                    <dl>
+                        <dt>
+                            <img src="img/answer_icn.png" alt="" class="icon">
+                        </dt>
+                        <dd>
+                            ご安心ください。多くの方が最初は不安を感じていますが、専属コンサルタントのタイムマネジメントやモチベーション管理などのきめ細かいサポートで、実際に激務の中で働いている方もプログラミングスキルを向上されています。
+                        </dd>
+                    </dl>
+                </details>
+                <details name="accordion-group">
+                    <summary>
+                        <img src="img/question_icn.png" alt="" class="icon">
+                        校舎に通うのが難しいのですが、大丈夫ですか？
+                    </summary>
+                    <dl>
+                        <dt>
+                            <img src="img/answer_icn.png" alt="" class="icon">
+                        </dt>
+                        <dd>
+                            基本的にオンライン受講となっています。対面受講の場合と同等のプログラミングスキル上達の実績を上げております。
+                        </dd>
+                    </dl>
+                </details>
+                <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">
+                    <p>詳しく知りたい方はこちら</p>
+                    <img src="img/arrow-icon.png" alt="矢印">
+                </a>
+            </div>
         </section>
-
     </main>
 
+
     <footer class="container">
-        <div class="container">
+        <div class="footer-inner">
             <div class="logo">
                 <img src="img/logo2.png" alt="">
             </div>
             <div class="sns-links">
-                <a href="https://www.instagram.com/kakashi.programming.lab" class="instagram">かかし</a>
-                <a href="https://www.instagram.com/iruka.freelance" class="instagram">いるか</a>
+                <a href="https://www.instagram.com/kakashi.programming.lab" class="instagram">
+                    <p>かかし</p>
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.instagram.com/iruka.freelance" class="instagram">
+                    <p>いるか</p>
+                    <i class="fab fa-instagram"></i>
+                </a>
                 <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="line">無料カウンセリングを予約</a>
             </div>
         </div>
+
         <small>© COPYRIGHT NOE Co.ltd</small>
+
+        <div class="line-sp">
+            <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn-footer">
+                <p>今すぐ無料カウンセリング</p>
+                <img src="img/arrow-icon.png" alt="矢印">
+            </a>
+        </div>
+
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

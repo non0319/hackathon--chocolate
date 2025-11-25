@@ -37,8 +37,6 @@ img {
     width: 100%;
     margin: 0 auto;
     padding-inline: 2%;
-
-
 }
 
 
@@ -131,4 +129,23 @@ img {
     opacity: 0;
     transform: translateY(20px);
     transition: all 1s;
+}
+
+// 無料カウンセリングボタン
+.cta-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: $accent-color;
+    color: #fff;
+    width: 380px;
+    height: 65px;
+    border-radius: 20px;
+    margin: 20px auto 0;
+
+    img{
+        width: 60px;
+        height: 12px;
+    }
 }
