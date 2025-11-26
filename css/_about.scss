@@ -1,6 +1,6 @@
 @use "mixin" as *;
 
-#about {
+.about {
     position: relative;
     background-image: url(../img/about-bg.png);
     background-size: cover;
@@ -9,7 +9,6 @@
     margin-top: -30%;
 
     .content-wrapper {
-
         .speech-bubbles {
             max-width: 1200px;
 
@@ -83,6 +82,7 @@
     }
 }
 
+
 .section-intro {
     max-width: 950px;
     margin: 100px auto 160px;
@@ -120,10 +120,10 @@
 
 
 @include sp {
-    #about {
+    .about {
         background-position: center;
         padding: 600px 0;
-        margin-top: -70%;
+        margin-top: -60%;
 
         .content-wrapper {
             .speech-bubbles {
@@ -138,9 +138,9 @@
             }
         }
 
-            .illustration-area {
-                width: 45%;
-            }
+        .illustration-area {
+            width: 45%;
+        }
 
         .solution-text {
             bottom: 15%;
@@ -156,6 +156,17 @@
                 width: 20px;
             }
         }
+    }
 
+    .section-intro {
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            text-align: left;
+        }
     }
 }
