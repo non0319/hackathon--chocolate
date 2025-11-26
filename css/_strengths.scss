@@ -1,7 +1,7 @@
 @use '_mixin' as *;
 
 $card-width: 260px;
-$card-height: 400px;
+$card-height: 350px;
 $overlap-amount: 50px;
 
 .card-stack-container {
@@ -9,10 +9,9 @@ $overlap-amount: 50px;
     justify-content: center;
     align-items: flex-start;
     margin: 100px auto 150px;
-    perspective: 1500px;
 
     @include sp {
-        display: grid;
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
 
@@ -54,8 +53,8 @@ $overlap-amount: 50px;
 
     // Mobile Layout: スタイルリセット (2x2グリッド対応)
     @include sp {
-        width: 100%;
-        max-width: none;
+        width: auto !important;
+        max-width: none !important;
         height: auto;
         min-height: 150px;
         margin-left: 0;
@@ -92,6 +91,7 @@ $overlap-amount: 50px;
 // ------------------------------------------------
 // ★★★ アクティブ状態 (PCのみの広がる演出: 1.2s) ★★★
 // ------------------------------------------------
+
 .card-stack-container.is-active {
 
     .info-card {
@@ -155,7 +155,7 @@ $overlap-amount: 50px;
 
     // Mobile: 画像の比率を調整
     @include sp {
-        height: 200px; 
+        height: 200px;
     }
 
     .card-img {
@@ -171,13 +171,14 @@ $overlap-amount: 50px;
     position: relative; // 矢印の親要素
 
     .card-number {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
         font-weight: bold;
         color: $main-color;
     }
 
     .card-title-text {
-        font-size: 0.9rem; 
+        font-size: 0.9rem;
+        font-weight: 600;
         margin-top: 5px;
     }
 
@@ -192,15 +193,15 @@ $overlap-amount: 50px;
             position: absolute;
             bottom: 15px;
             right: 15px;
-            width: 20px; 
-            height: 20px;
+            width: 15px;
+            height: 15px;
 
             // 矢印
             border: solid $main-color;
-            border-width: 0 2px 2px 0; 
+            border-width: 0 2px 2px 0;
             padding: 3px;
 
-            transform: rotate(45deg); // 初期状態は右向き下
+            transform: rotate(45deg);
             transition: transform 0.3s ease;
         }
     }
@@ -220,7 +221,7 @@ $overlap-amount: 50px;
     overflow: hidden;
     transition: height 0.4s ease, opacity 0.4s ease;
 
-    // Mobileでは非表示（JSで生成されるアコーディオンを使用）
+    // Mobileでは非表示（HTMLに静的に配置したブロックを使用）
     @include sp {
         display: none;
     }
@@ -241,26 +242,39 @@ $overlap-amount: 50px;
     }
 }
 
-// ------------------------------------------------
-// モバイル専用アコーディオンのスタイル (JSで生成され、カードの直後に挿入されます)
-// ------------------------------------------------
-.mobile-detail-accordion {
 
+// ================================================
+// ★★★ モバイル専用詳細ブロック  ★★★
+// ================================================
+.mobile-detail-block {
 
-    @include sp {
-        // グリッドレイアウトで2列にまたがるように設定
-        grid-column: 1 / span 2;
-        width: 100%;
-        margin-bottom: 0; 
-        border-radius: 0 0 12px 12px;
-        padding: 0 15px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    // PCでは非表示
+    @media (min-width: 769px) {
+        display: none;
     }
 
-    .detail-content {
-        padding: 15px 0;
+    @include sp {
+        grid-column: 1 / span 2;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        margin-bottom: 0;
+        visibility: hidden;
+        background-color: #f8f8f8;
+        border-radius: 0 0 12px 12px;
+        transition: max-height 0.3s ease-out, visibility 0s 0.3s;
+    }
+
+    // 1列レイアウト時
+    @media(max-width: 440px) {
+        grid-column: 1 / 1;
+    }
+}
+
+.mobile-detail-block .detail-content {
+    @include sp {
+        padding: 15px;
+        /* コンテンツ全体のパディング */
 
         h3 {
             color: $main-color;
@@ -273,24 +287,19 @@ $overlap-amount: 50px;
             line-height: 1.7;
         }
     }
-
-    &.is-open {
-        max-height: 500px;
-        padding: 15px;
-    }
 }
 
-// ------------------------------------------------
-// バイル用プレースホルダー
-// ------------------------------------------------
-.mobile-accordion-placeholder {
+// ★開いた状態: 大きなmax-heightを設定して展開★
+.mobile-detail-block.is-open {
     @include sp {
-        grid-column: 1 / span 2;
-        height: 0;
-        width: 100%;
+        max-height: 1000px;
+        /* コンテンツの高さより十分大きな値 */
         margin-bottom: 16px;
-        transition: height 0.3s ease-out;
-        background-color: transparent;
+        /* 開いた時のみ、下の要素との間にギャップを作る */
+
+        // ★ 修正点: 開くときは表示を元に戻し、即時適用する ★
+        visibility: visible;
+        transition: max-height 0.3s ease-out, visibility 0s 0s;
     }
 }
 
@@ -299,11 +308,20 @@ $overlap-amount: 50px;
 // モバイル開閉状態と矢印の連携
 // ------------------------------------------------
 .info-card.is-active-mobile {
-    // 開いている状態のカードのスタイル
+    // 開いている状態のカードのスタイル (下部を丸めない)
     border-radius: 12px 12px 0 0 !important;
 
     // 矢印を回転させる (開いているので上向き)
     .mobile-arrow-icon {
         transform: rotate(-135deg);
+    }
+}
+
+// =======================================================
+// ★★★ 修正箇所: 440px以下での1列グリッドを正しく定義 ★★★
+// =======================================================
+@media(max-width: 440px) {
+    .card-stack-container {
+        grid-template-columns: 1fr;
     }
 }

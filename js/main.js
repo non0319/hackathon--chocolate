@@ -1,301 +1,159 @@
 
-/*=================================================
-strengths （カード）
-===================================================*/
 document.addEventListener('DOMContentLoaded', () => {
   // ================================================
-  // I. 要素取得
+  // I. 要素取得と定数定義
   // ================================================
   const section = document.getElementById('strengths');
   const container = document.querySelector('.card-stack-container');
   const cards = document.querySelectorAll('.info-card');
   const pcDetailSection = document.getElementById('card-detail-section');
+  // HTMLに配置した詳細ブロックを取得
+  const detailBlocks = document.querySelectorAll('.mobile-detail-block');
 
-  const SCROLL_OFFSET = 500;
   const MOBILE_BREAKPOINT = 768;
+  const SCROLL_OFFSET = 500;
 
-  // モバイル判定ヘルパー
+  // 状態変数
+  let openDetailBlock = null;
+  let openCardElement = null;
+
   const isMobile = () => window.innerWidth <= MOBILE_BREAKPOINT;
 
-  let openMobileDetailElement = null; // 現在開いているモバイル詳細DOM要素
-  let openPlaceholderElement = null; // 現在開いているプレースホルダーDOM要素
-  let openCardElement = null; // モバイルで開いているカード要素（角を制御するため）
+  // PC詳細データ (PC処理のために維持)
+  const details = {
+    1: { title: "最短で成長できる“戦略的”学習プラン", body: "あなた専属のマンツーマンコーチが、今のレベルに合わせて無理なく学習を進められるようサポートします。毎週の振り返りでつまずきを解消。24時間LINEで質問できるので、分からないまま置いていかれる心配もありません。一人ひとりに合った進め方で、効率的にステップアップできます。" },
+    2: { title: "弱点を見える化して、効率よく成長", body: "独学だと「何を優先して学べばいいか分からない…」こともあります。専属コーチがあなたの弱点や課題を分析し、今取り組むべきポイントを明確化。どこを強化すれば成果につながるかが分かるので、ムダなく効率的にスキルアップできます。" },
+    3: { title: "初めての案件も安心。プロが伴走", body: "学習後は、実際の案件獲得に向けてプロの営業担当が商談に同行してくれます。実際のやり取りを間近で学び、フィードバックを受けながら対応力を高められるので、初めてでも安心して挑戦できます。学習から案件獲得まで、迷わず一歩ずつ進める環境が整っています。" },
+    4: { title: "コミュニティで仲間と繋がる", body: "受講生や卒業生が参加できるコミュニティで、技術の質問や情報共有、モチベーション維持、案件の紹介など幅広く交流できます。プログラミングを学習している仲間たちと、世界中どこにいてもつながれる環境です。同じ目標に向かって頑張る仲間がいるから、モチベーションも高まり、学習や成長を続けやすくなります。" }
+  };
 
   // ================================================
-  // II. スクロール時アニメーション（IntersectionObserver）
+  // II. 初期設定とイベント
   // ================================================
+
+  // スクロール時アニメーション
   if (section && container) {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // PCでのみ複雑なアニメーションを発火
             if (!isMobile()) {
               container.classList.add('is-active');
             }
-            // 一度発火したら解除
             observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
-
     observer.observe(section);
   }
 
-
-  // ================================================
-  // III. カード詳細表示（クリック開閉 & スクロール調整）
-  // ================================================
-  const details = {
-    1: {
-      title: "週1回の1on1授業",
-      body: "あなたの現在のスキルレベル、学習進捗、最終目標をヒアリングした上で、現役エンジニアである講師が毎週きめ細かくサポートします。教材の疑問解消だけでなく、課題に対するコードレビューやキャリアパスに関する具体的なアドバイスを通して、確実なスキルアップを実現します。これにより、独学では難しい「本当に現場で使える力」を最短距離で身につけることができます。"
-    },
-    2: {
-      title: "案件獲得までを徹底サポート",
-      body: "学習の最終ゴールである「案件獲得」を見据えた実践的なサポートを提供します。クライアントの課題を解決するための要件定義、技術選定、設計を含むポートフォリオの企画・開発を指導。さらに、実戦を想定した営業資料のブラッシュアップ、商談シミュレーション、単価交渉のテクニックまで、フリーランスとして独立するために必要なビジネススキルを徹底的に鍛え上げます。"
-    },
-    3: {
-      title: "営業代行サポート",
-      body: "スキル習得と並行して行う煩雑な営業活動の一部（クライアントへのアプローチ、条件交渉など）をスクールが代行します。これにより、受講生は技術の研鑽とポートフォリオ制作に集中することが可能です。初めての実案件獲得のハードルを下げ、安心して実務経験を積むことができる環境を提供し、スムーズなフリーランスデビューを強力に後押しします。"
-    },
-    4: {
-      title: "コミュニティで仲間と繋がる",
-      body: "受講生および卒業生が参加できるコミュニティを提供しています。日々の技術的な質問はもちろん、最新技術の情報共有、モチベーションの維持、案件の紹介・連携など、多岐にわたる交流が可能です。特に「勉強会」や「モブプログラミング」などの企画を通じて、卒業後もプロとして活躍し続けるための生涯にわたる仲間と強力なネットワークを築くことができます。"
-    }
-  };
-
-  /**
-   * モバイル用アコーディオンを開いているカードの下の行に移動させるためのプレースホルダーを作成し挿入する
-   * @param {HTMLElement} currentCard クリックされたカード要素
-   * @returns {HTMLElement} 作成されたプレースホルダー要素
-   */
-  const insertPlaceholder = (currentCard) => {
-    // クリックされたカードのインデックスを取得 (0, 1, 2, 3)
-    const index = Array.from(cards).indexOf(currentCard);
-
-    // 挿入位置を決定: 2x2 グリッドの場合、アコーディオンはグリッドの2列をまたぐため、
-    // 常にカードの行の末尾の要素の直後にプレースホルダーを挿入する。
-    // 
-    // index 0 (1枚目) -> index 1 (2枚目)の直後に挿入
-    // index 1 (2枚目) -> index 1 (2枚目)の直後に挿入
-    // index 2 (3枚目) -> index 3 (4枚目)の直後に挿入
-    // index 3 (4枚目) -> index 3 (4枚目)の直後に挿入
-    const isFirstRow = index < 2;
-    const targetCard = isFirstRow ? cards[1] : cards[3]; // 挿入位置を制御するカード
-
-    // プレースホルダーの作成
-    const placeholder = document.createElement('div');
-    placeholder.className = 'mobile-accordion-placeholder';
-
-    // 挿入: targetCardが存在すればその直後に挿入する
-    if (targetCard && targetCard.nextSibling) {
-      container.insertBefore(placeholder, targetCard.nextSibling);
-    } else if (targetCard) {
-      // targetCardが最後の要素の場合は末尾に追加
-      container.appendChild(placeholder);
-    }
-
-    return placeholder;
-  }
-
-  /**
-   * プレースホルダーの高さを計算し、アコーディオンの高さと同期させる
-   * @param {HTMLElement} detailEl アコーディオン要素
-   * @param {HTMLElement} placeholderEl プレースホルダー要素
-   * @param {boolean} isOpen 開く動作か閉じる動作か
-   */
-  const syncPlaceholderHeight = (detailEl, placeholderEl, isOpen) => {
-    if (!detailEl || !placeholderEl) return;
-
-    if (isOpen) {
-      // アコーディオンを開く
-      // detailEl.classList.add('is-open')後に実行する必要があるため、setTimeoutでディレイ
-      setTimeout(() => {
-        // アコーディオンの実際の高さを取得
-        const finalHeight = detailEl.offsetHeight + 16; // 16pxはグリッドの隙間分
-        placeholderEl.style.height = `${finalHeight}px`;
-      }, 10);
-
-    } else {
-      // アコーディオンを閉じる
-      placeholderEl.style.height = '0';
-      // プレースホルダーを削除
-      setTimeout(() => {
-        placeholderEl.remove();
-        openPlaceholderElement = null;
-      }, 300); // CSS transition timeに合わせて
-    }
-  }
-
-
-  // -----------------------------------
-  // ★ カードクリックイベント
-  // -----------------------------------
+  // 矢印アイコンのDOM挿入
   cards.forEach(card => {
-    // モバイル版の矢印HTMLを事前に挿入 (前回の修正で追加済みだが、ロジック維持のため残す)
     const cardTextContent = card.querySelector('.card-text-content');
     if (cardTextContent && !card.querySelector('.mobile-arrow-icon')) {
       const arrow = document.createElement('div');
       arrow.className = 'mobile-arrow-icon';
       cardTextContent.appendChild(arrow);
     }
+  });
 
+
+  // ★ カードクリックイベント
+  cards.forEach(card => {
     card.addEventListener('click', () => {
       const id = card.dataset.cardId;
       const data = details[id];
       if (!data) return;
 
       // -----------------------------------
-      // A. クリック直後の transform 衝突を防ぐ (PC専用)
+      // A. PC処理 (変更なし)
       // -----------------------------------
       if (!isMobile()) {
         card.style.transition = "none";
-        setTimeout(() => {
-          card.style.transition = "";
-        }, 50);
-        // PC処理に移行
+        setTimeout(() => { card.style.transition = ""; }, 50);
+
         if (!pcDetailSection) return;
 
-        // B. 同じカードをクリック → 閉じる
         if (pcDetailSection.dataset.openId === id) {
           pcDetailSection.classList.remove('is-open');
           pcDetailSection.removeAttribute('data-open-id');
           return;
         }
 
-        // C. 内容をセットして開く
-        pcDetailSection.innerHTML = `
-                    <div class="detail-content">
-                        <h3>${data.title}</h3>
-                        <p>${data.body}</p>
-                    </div>
-                `;
-
+        pcDetailSection.innerHTML = `<div class="detail-content"><h3>${data.title}</h3><p>${data.body}</p></div>`;
         pcDetailSection.classList.add('is-open');
         pcDetailSection.dataset.openId = id;
 
-
-        // D. スクロールをオフセットつきで調整
-        const targetPosition =
-          pcDetailSection.getBoundingClientRect().top + window.scrollY;
-
-        const finalScrollPosition = targetPosition - SCROLL_OFFSET;
-
-        window.scrollTo({
-          top: finalScrollPosition,
-          behavior: 'smooth'
-        });
+        const targetPosition = pcDetailSection.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: targetPosition - SCROLL_OFFSET, behavior: 'smooth' });
         return;
       }
 
-      // ===================================
-      // モバイル処理: アコーディオン表示
-      // ===================================
-
-      const isCurrentCardOpen = openCardElement && openCardElement.dataset.cardId === id;
-
       // -----------------------------------
-      // 1. 既に開いている詳細があれば閉じる
+      // B. モバイル処理 (max-height方式)
       // -----------------------------------
-      if (openMobileDetailElement) {
 
-        openMobileDetailElement.classList.remove('is-open');
+      // クリックされたカードに対応する詳細ブロックを取得
+      const targetDetail = document.querySelector(`.mobile-detail-block[data-detail-id="${id}"]`);
+      if (!targetDetail) return;
 
-        if (openPlaceholderElement) {
-          // プレースホルダーの高さを0にし、300ms後に要素を削除
-          syncPlaceholderHeight(openMobileDetailElement, openPlaceholderElement, false);
-          // openPlaceholderElementは syncPlaceholderHeight 内で null に設定される
-        }
+      const isCurrentCardOpen = targetDetail === openDetailBlock;
 
+      // 1. 既に何か開いている場合、現在のものを閉じる
+      if (openDetailBlock) {
+        openDetailBlock.classList.remove('is-open');
         if (openCardElement) {
           openCardElement.classList.remove('is-active-mobile');
         }
-
-        // アコーディオン本体を削除
-        openMobileDetailElement.remove();
-        openMobileDetailElement = null;
-        openCardElement = null;
-
-        // 同じカードを再度クリックした場合、閉じて終了
-        if (isCurrentCardOpen) {
-          return;
-        }
-
-        // 別のカードをクリックした場合は、閉じる処理の後に開く処理を続行
       }
 
-      // -----------------------------------
-      // 2. 新しい詳細DOM要素とプレースホルダーを作成し挿入
-      // -----------------------------------
+      if (isCurrentCardOpen) {
+        // 同じカードを再度クリックした場合: 閉じる処理だけで終了
+        openDetailBlock = null;
+        openCardElement = null;
+        return;
+      }
 
-      // プレースホルダーを適切な位置に挿入し、次の行のカードを押し下げる
-      openPlaceholderElement = insertPlaceholder(card);
+      // 2. 新しい詳細を開く
+      targetDetail.classList.add('is-open');
+      card.classList.add('is-active-mobile');
 
-      // アコーディオン本体の作成
-      const newDetail = document.createElement('div');
-      newDetail.className = 'mobile-detail-accordion';
-      newDetail.dataset.cardId = id;
-      newDetail.innerHTML = `
-          <div class="detail-content">
-              <h3>${data.title}</h3>
-              <p>${data.body}</p>
-          </div>
-      `;
+      // 状態変数を更新
+      openDetailBlock = targetDetail;
+      openCardElement = card;
 
-      container.insertBefore(newDetail, openPlaceholderElement);
-
-
-      // -----------------------------------
-      // 3. transitionのためにクラスを付与し、高さを同期
-      // -----------------------------------
-      setTimeout(() => {
-        newDetail.classList.add('is-open');
-        card.classList.add('is-active-mobile'); // 角と矢印の制御用クラスを付与
-
-        // プレースホルダーの高さをアコーディオンの高さと同期
-        syncPlaceholderHeight(newDetail, openPlaceholderElement, true);
-      }, 10);
-
-      openMobileDetailElement = newDetail;
-      openCardElement = card; // 角を制御するためのカードを記憶
-
-      // -----------------------------------
-      // 4. スクロール調整 (カードの少し上にスクロール)
-      // -----------------------------------
+      // スクロール調整
       const targetPosition = card.getBoundingClientRect().top + window.scrollY;
-
       window.scrollTo({
         top: targetPosition - 20,
         behavior: 'smooth'
       });
+
     });
   });
 
   // =========================================================
-  // ウィンドウサイズ変更時のモバイル詳細要素のクリーンアップ (PCに戻った時のための措置)
+  // IV. ウィンドウサイズ変更時のモバイル詳細要素のクリーンアップ
   // =========================================================
   window.addEventListener('resize', () => {
-    // モバイルからPCのブレイクポイントを超えた時
     if (window.innerWidth > MOBILE_BREAKPOINT) {
-      if (openMobileDetailElement) {
-        openMobileDetailElement.remove();
-        openMobileDetailElement = null;
-      }
-      if (openPlaceholderElement) {
-        openPlaceholderElement.remove();
-        openPlaceholderElement = null;
-      }
-      if (openCardElement) {
-        openCardElement.classList.remove('is-active-mobile');
-        openCardElement = null;
-      }
+      // PCになったらモバイルの詳細をすべて閉じる
+      detailBlocks.forEach(block => {
+        block.classList.remove('is-open');
+      });
+      cards.forEach(card => {
+        card.classList.remove('is-active-mobile');
+      });
+
+      // 状態変数をリセット
+      openDetailBlock = null;
+      openCardElement = null;
+      container.classList.add('is-active');
     }
   });
 });
-
 
 /*=================================================
 スクロール時の画像フェード表示
@@ -379,6 +237,60 @@ $(document).ready(function () {
 
 });
 
+/*=================================================
+ change
+===================================================*/
+document.addEventListener('DOMContentLoaded', () => {
+  const storyControls = document.querySelector('.story-controls');
+  const slider = document.querySelector('.story-slider');
+
+  // PCビューではJSによるスライド処理をスキップ
+  const isPC = () => window.innerWidth >= 768;
+
+  if (storyControls && slider) {
+    let isAfterActive = false;
+
+    const updateSliderPosition = () => {
+      if (isPC()) {
+        slider.style.transform = 'translateX(0)';
+      } else {
+        if (isAfterActive) {
+          slider.style.transform = 'translateX(-50%)';
+        } else {
+          slider.style.transform = 'translateX(0)';
+        }
+      }
+    };
+
+    // コントロールボタンのイベントリスナー設定
+    storyControls.addEventListener('click', (e) => {
+      if (isPC()) return;
+
+      const targetButton = e.target.closest('.control-btn');
+      if (!targetButton) return;
+
+      document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+      targetButton.classList.add('active');
+
+      const target = targetButton.getAttribute('data-target');
+
+      if (target === 'before') {
+        slider.style.transform = 'translateX(0)';
+        isAfterActive = false;
+      } else if (target === 'after') {
+        slider.style.transform = 'translateX(-50%)';
+        isAfterActive = true;
+      }
+    });
+
+    // 画面サイズ変更時にも位置を調整
+    window.addEventListener('resize', updateSliderPosition);
+
+    // 初期ロード時も位置を調整し、Beforeをアクティブにする
+    updateSliderPosition();
+    document.querySelector('.control-btn[data-target="before"]').click();
+  }
+});
 
 /*=================================================
   achievements
@@ -513,7 +425,7 @@ $(window).on('scroll load', function () {
       var target = $(this).offset().top;
 
       // 下スクロールで画面下から200px通過したタイミング
-      if (scroll > target - windowHeight -750) {
+      if (scroll > target - windowHeight - 750) {
         if (!$el.hasClass('roll-in')) {
           setTimeout(function () {
             $el.addClass('roll-in');
