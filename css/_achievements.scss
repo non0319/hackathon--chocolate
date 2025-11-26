@@ -12,7 +12,7 @@
         margin: 0 auto 60px;
 
         @include sp{
-            height: 640px;
+            height: 620px;
         }
     }
 }
@@ -27,7 +27,7 @@
     margin: 0 auto;
 
     @include sp {
-        height: 640px;
+        height: 620px;
     }
 
     .student-page {
@@ -59,7 +59,7 @@
 
         .flipped {
             transform: rotateY(-150deg);
-            opacity: 1; // 完全に消さない
+            opacity: 1;
         }
 
         &::before {
@@ -79,6 +79,11 @@
 
         .heading-strong {
             color: $accent-color;
+            font-size: 1.5rem;
+
+            @include sp{
+                font-size: 1rem;
+            }
         }
 
         .page-item {
@@ -94,6 +99,7 @@
                 flex-direction: column;
                 flex-wrap: wrap;
                 align-content: space-around;
+                gap: 16px;
             }
 
             .page-item-student,
@@ -168,6 +174,7 @@
                     }
 
                     .link-text {
+                        display: block;
                         color: $main-color;
 
                         @include sp {
@@ -194,8 +201,11 @@
 
 .student-page.flip {
     transform: rotateY(-180deg) skewY(10deg);
-    /* ← skewはお好みで調整可 */
     opacity: 0.3;
+
+    @include sp{
+        opacity: 0;
+    }
 }
 
 .link-btn-blue {

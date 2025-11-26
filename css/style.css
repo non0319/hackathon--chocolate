@@ -531,8 +531,7 @@ footer .line-sp {
 .mainvisual .mv-right ul.image-slider li img {
   min-width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .mainvisual .mv-right .sit-img {
@@ -592,8 +591,7 @@ footer .line-sp {
     right: 0;
   }
   .mainvisual .mv-right ul.image-slider li img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mainvisual .mv-right .sit-img {
     max-width: 10%;
@@ -619,7 +617,6 @@ footer .line-sp {
   background-color: white;
   padding: 80px;
   border-radius: 50%;
-  width: -moz-fit-content;
   width: fit-content;
   box-shadow: 30px 0px 0px 0px rgba(239, 239, 239, 0.62);
 }
@@ -899,8 +896,7 @@ footer .line-sp {
 .card-image-wrapper .card-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-text-content {
@@ -1025,7 +1021,7 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   #achievements .book-area {
-    height: 640px;
+    height: 620px;
   }
 }
 
@@ -1040,7 +1036,7 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .book-item {
-    height: 640px;
+    height: 620px;
   }
 }
 .book-item .student-page {
@@ -1088,6 +1084,12 @@ footer .line-sp {
 }
 .book-item .student-page .heading-strong {
   color: #E97C27;
+  font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  .book-item .student-page .heading-strong {
+    font-size: 1rem;
+  }
 }
 .book-item .student-page .page-item {
   display: flex;
@@ -1103,6 +1105,7 @@ footer .line-sp {
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
+    gap: 16px;
   }
 }
 .book-item .student-page .page-item .page-item-student,
@@ -1173,6 +1176,7 @@ footer .line-sp {
   }
 }
 .book-item .student-page .page-item .page-item-achievement .achievement-link .link-text {
+  display: block;
   color: #4B80AA;
 }
 @media (max-width: 768px) {
@@ -1194,8 +1198,12 @@ footer .line-sp {
 
 .student-page.flip {
   transform: rotateY(-180deg) skewY(10deg);
-  /* ← skewはお好みで調整可 */
   opacity: 0.3;
+}
+@media (max-width: 768px) {
+  .student-page.flip {
+    opacity: 0;
+  }
 }
 
 .link-btn-blue {
@@ -1213,8 +1221,7 @@ footer .line-sp {
 .link-btn-blue img {
   width: 40px;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 #teachers {
@@ -1253,7 +1260,7 @@ footer .line-sp {
 
 .list {
   position: absolute;
-  top: 350px;
+  top: 370px;
   left: 0;
   width: 100%;
   height: 350px;
@@ -1266,32 +1273,39 @@ footer .line-sp {
   gap: 40px;
   padding: 40px 100px;
   transform: translateY(300px);
+  overflow: hidden;
   z-index: 10;
 }
 @media (max-width: 768px) {
   .list {
+    top: 0px;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
-    height: 95%;
+    gap: 16px;
+    height: 84%;
     border-radius: 16px;
     padding: 8px;
     margin-top: 20px;
   }
 }
 .list .list-img {
+  display: block;
   width: 30%;
+  height: auto;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   .list .list-img {
-    width: 100%;
+    width: 90%;
+    height: 200px;
   }
 }
 .list .list-img img {
   width: 100%;
+  height: 100%;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .list .list-content {
   width: 68%;
@@ -1390,8 +1404,7 @@ footer .line-sp {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.5;
   z-index: 1;
 }
@@ -1430,8 +1443,7 @@ footer .line-sp {
 #metaleaf .metaleaf_area .feature .icon img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 #metaleaf .metaleaf_area .feature p {
   font-size: 0.625rem;
@@ -1527,8 +1539,7 @@ footer .line-sp {
   width: 100%;
   height: 50%;
   border-radius: 10px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-top: 16px;
 }
 .modal-content .modal_text {
@@ -1574,8 +1585,7 @@ footer .line-sp {
   height: 250px;
   position: relative;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: translateY(-25px);
 }
 #curriculum .swiper .circle-wrap .step-title {
@@ -1678,8 +1688,7 @@ footer .line-sp {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;
