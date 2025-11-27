@@ -36,6 +36,10 @@ $(document).ready(function () {
 
   // メニューリンククリック
   $(".flip-nav a").on("click", function (e) {
+    if ($(this).hasClass('insta-link')) {
+      header.removeClass("open");
+      return true;
+    }
     const isSP = $(window).width() <= 768; // SP判定
 
     if (isSP) {
@@ -62,7 +66,7 @@ $(document).ready(function () {
   });
 
   // 汎用スムーススクロール（PC版のみ）
-  $('a[href^="#"]').on("click", function (e) {
+  $('a[href^="#"]:not(.insta-link)').on("click", function (e) {
     const isSP = $(window).width() <= 768; // SP判定
 
     if (isSP) {
