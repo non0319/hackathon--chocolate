@@ -1,0 +1,234 @@
+@use "mixin" as *;
+
+// 変数定義
+$color-primary: #FF7043; // Afterのキーカラー（オレンジ系）
+$color-secondary: #5C88B8; // Beforeの対比色（青系）
+$color-text: #333;
+$color-error: #E53935; // 吹き出しの色
+$color-success: #66BB6A; // 吹き出しの色
+$breakpoint-pc: 768px;
+
+.change {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+
+    p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $color-text;
+        margin-bottom: 40px;
+    }
+}
+
+.story-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+
+    @media (min-width: $breakpoint-pc) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+// --------------------------------------------------
+// モバイル用切り替えボタン
+// --------------------------------------------------
+.story-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @media (min-width: $breakpoint-pc) {
+        display: none;
+    }
+
+    .control-btn {
+        padding: 10px 20px;
+        margin: 0 5px;
+        border: 2px solid $color-primary;
+        background-color: #fff;
+        color: $color-primary;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        border-radius: 8px;
+
+        &.active {
+            background-color: $color-primary;
+            color: #fff;
+        }
+    }
+}
+
+// --------------------------------------------------
+// PC用中央の矢印
+// --------------------------------------------------
+.story-divider {
+    display: none;
+
+    @media (min-width: $breakpoint-pc) {
+        display: block;
+        width: 60px;
+        height: auto;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.7;
+        }
+    }
+}
+
+// --------------------------------------------------
+// スライダーコンテナ (モバイル用)
+// --------------------------------------------------
+.story-main-content {
+    @media (min-width: $breakpoint-pc) {
+        display: contents;
+    }
+}
+
+.story-slider {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s ease-in-out;
+
+    @media (min-width: $breakpoint-pc) {
+        width: auto;
+        transform: translateX(0) !important;
+        transition: none;
+        display: contents;
+        box-shadow: none;
+    }
+}
+
+// --------------------------------------------------
+// パネルの共通スタイル
+// --------------------------------------------------
+.story-panel {
+    flex-shrink: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; // 吹き出しと画像を配置するため上寄せ
+    aspect-ratio: 1 / 1.1;
+    margin: 0 auto;
+    max-width: 380px;
+
+    @media (min-width: $breakpoint-pc) {
+        width: 380px;
+        height: 418px;
+        margin: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 40px 20px 20px; // 上の余白を増やし、下の余白を確保
+    }
+
+    .label {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 0.9rem;
+        font-weight: bold;
+        padding: 8px 20px;
+        border-radius: 9999px;
+        color: #fff;
+        white-space: nowrap;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        z-index: 20;
+    }
+
+    .story-image {
+        width: 100%;
+        height: auto; // 高さ自動調整
+        max-height: 70%; // 吹き出し分のスペースを確保
+        object-fit: contain;
+        border-radius: 8px;
+        margin: 10px 0; // 画像の上下に少しマージン
+    }
+}
+
+// --------------------------------------------------
+// 吹き出しスタイル (.story-calloutを復活)
+// --------------------------------------------------
+.story-callout {
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    // パネルの下部に寄せて配置するためにabsoluteを使う
+    position: absolute;
+    bottom: 10px; // パネルの下端に寄せ
+}
+
+// --------------------------------------------------
+// Before パネル & 吹き出し
+// --------------------------------------------------
+.before-panel {
+    .label {
+        background-color: $color-secondary;
+    }
+
+    .story-image {
+        padding: 10px;
+    }
+
+    // 吹き出しの位置調整（パネル下部に横並びで配置）
+    .callout-error {
+        background-color: $color-error;
+        left: 10%;
+    }
+
+    .callout-unknown {
+        background-color: #9E9E9E;
+        right: 10%;
+    }
+}
+
+// --------------------------------------------------
+// After パネル & 吹き出し
+// --------------------------------------------------
+.after-panel {
+    .label {
+        background-color: $color-primary;
+    }
+
+    .story-image {
+        // After画像は広めに表示するが、吹き出しスペースは確保
+        max-height: 70%;
+    }
+
+    // 吹き出しの位置調整（パネル下部に横並びで配置）
+    .callout-project {
+        background-color: $color-primary;
+        left: 50%;
+        transform: translateX(-120%); // 左側に寄せる
+    }
+
+    .callout-team {
+        background-color: #4DB6AC;
+        left: 50%;
+        transform: translateX(-50%); // 中央
+    }
+
+    .callout-biz {
+        background-color: $color-success;
+        left: 50%;
+        transform: translateX(20%); // 右側に寄せる
+    }
+}

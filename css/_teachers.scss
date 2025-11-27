@@ -13,6 +13,12 @@
 
     .teachers-area {
         position: relative;
+            width: 100%;
+            height: auto;
+            
+            // @include sp{
+            //     height: calc(260px * 4);
+            // }
 
         .teachers-header {
             position: sticky;
@@ -31,6 +37,10 @@
             position: relative;
             width: 100%;
             height: 100vh;
+
+            @include sp{
+                height: 50vh;
+            }
         }
     }
 }
@@ -54,13 +64,15 @@
     z-index: 10;
 
     @include sp {
-        top: 0px;
+        top: 20px;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: space-around;
         gap: 16px;
-        height: 84%;
+        width: 360px;
+        height: 560px;
         border-radius: 16px;
+        transform: translateY(50px);
         padding: 8px;
         margin-top: 20px;
     }
