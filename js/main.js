@@ -295,44 +295,60 @@ document.addEventListener('DOMContentLoaded', () => {
 /*=================================================
   achievements
 ===================================================*/
-let currentPage = 0;
-const pages = document.querySelectorAll(".student-page");
-
-pages.forEach((page, i) => {
-  page.style.zIndex = pages.length - i;
-});
-
-function flipNextPage() {
-  const page = pages[currentPage];
-  if (!page) return;
-
-  // めくるアニメーション開始
-  page.classList.add("flip");
-
-  // 2.2s 後にページを後ろに回す（transition と合わせて！）
-  setTimeout(() => {
-    page.style.zIndex = 0;
-  }, 2200);
-
-  currentPage++;
-
-  // 最後まで行ったらリセット
-  if (currentPage === pages.length) {
-    setTimeout(() => {
-      pages.forEach((p, i) => {
-        p.classList.remove("flip");
-        p.style.zIndex = pages.length - i;
-      });
-      currentPage = 0;
-    }, 2500);
-  }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
+  let currentPage = 0;
+
+  const pages = document.querySelectorAll(".student-page");
   const book = document.querySelector(".book-item");
-  if (book) {
-    book.addEventListener("click", flipNextPage);
+
+  if (!pages.length || !book) return;
+
+  // ▼ SP 判定（768px 以下）
+  const isSP = window.innerWidth <= 768;
+
+  // ▼ SP のときはページめくりを無効化（イベント付与しない）
+  if (isSP) {
+    return;
   }
+
+  // ▼ PC のときだけページめくりの z-index をセット
+  pages.forEach((page, i) => {
+    page.style.zIndex = pages.length - i;
+  });
+
+  // ▼ ページをめくる関数（PC 専用）
+  function flipNextPage() {
+    const page = pages[currentPage];
+    if (!page) return;
+
+    page.classList.add("flip");
+
+    // めくり終わったページを最背面へ移動
+    setTimeout(() => {
+      page.style.zIndex = 0;
+    }, 2200);
+
+    currentPage++;
+
+    // 全ページめくり終わったらリセット
+    if (currentPage === pages.length) {
+      setTimeout(() => {
+        pages.forEach((p, i) => {
+          p.classList.remove("flip");
+          p.style.zIndex = pages.length - i;
+        });
+        currentPage = 0;
+      }, 2500);
+    }
+  }
+
+  // ▼ PC のみイベント追加（クリック・タッチ）
+  book.addEventListener("click", flipNextPage);
+
+  book.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+    flipNextPage();
+  });
 });
 
 /*=================================================
@@ -347,33 +363,28 @@ window.addEventListener("load", () => {
 
   if (!lists.length) return;
 
-  const listHeight = window.innerWidth <= 768 ? 300 : 400;
+  // SP/PC別の高さ
+  const listHeight = window.innerWidth <= 768 ? 260 : 400;
   const pinDistance = lists.length * listHeight;
 
-  // 初期値は GSAP でセット（CSSとは衝突しない）
-  gsap.set(lists, { opacity: 0, y: 80 });
+  // 初期状態
+  gsap.set(lists, { opacity: 0, y: 100 });
 
-  const tl = gsap.timeline({
+  gsap.timeline({
     scrollTrigger: {
       trigger: listArea,
       start: "top top",
       end: "+=" + pinDistance,
       scrub: true,
       pin: listArea,
+      pinSpacing: true,
       anticipatePin: 1
     }
-  });
-
-  lists.forEach((item, i) => {
-    tl.to(
-      item,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-      },
-      i * 0.8
-    );
+  }).to(lists, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    stagger: 0.8
   });
 });
 
