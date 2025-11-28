@@ -574,8 +574,7 @@ footer .line-sp {
 .mainvisual .mv-right ul.image-slider li img {
   min-width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .mainvisual .mv-right .sit-img {
@@ -635,8 +634,7 @@ footer .line-sp {
     right: 0;
   }
   .mainvisual .mv-right ul.image-slider li img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mainvisual .mv-right .sit-img {
     max-width: 10%;
@@ -978,8 +976,7 @@ footer .line-sp {
 .card-image-wrapper .card-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-text-content {
@@ -1243,8 +1240,7 @@ footer .line-sp {
   width: 90%;
   height: auto;
   max-height: 70%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border-radius: 8px;
   margin: 10px 0;
   filter: none;
@@ -1421,8 +1417,7 @@ footer .line-sp {
   width: 200px;
   height: 200px;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
   margin: 0 auto;
 }
@@ -1455,8 +1450,7 @@ footer .line-sp {
   display: block;
   width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 16px;
   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
 }
@@ -1549,8 +1543,7 @@ footer .line-sp {
 .link-btn-blue img {
   width: 40px;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 @keyframes shine {
@@ -1575,6 +1568,12 @@ footer .line-sp {
   width: 100%;
   height: auto;
 }
+@media (max-width: 768px) {
+  #teachers .teachers-area {
+    position: static;
+    height: auto;
+  }
+}
 #teachers .teachers-area .teachers-header {
   position: sticky;
   top: 100px;
@@ -1593,7 +1592,7 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   #teachers .teachers-area .teacher-list-area {
-    height: 120vh;
+    height: 3000px;
   }
 }
 
@@ -1605,10 +1604,10 @@ footer .line-sp {
   height: 350px;
   background: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  opacity: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  opacity: 0;
   gap: 40px;
   padding: 40px 100px;
   transform: translateY(300px);
@@ -1617,15 +1616,14 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .list {
-    top: 300px;
+    top: 20px;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
     gap: 16px;
     width: 100%;
-    height: 70%;
+    height: 560px;
     border-radius: 16px;
-    transform: translateY(50px);
     padding: 8px;
     margin: 0 auto 20px;
   }
@@ -1634,8 +1632,7 @@ footer .line-sp {
   display: block;
   width: 30%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   .list .list-img {
@@ -1647,8 +1644,7 @@ footer .line-sp {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .list .list-content {
   width: 68%;
@@ -1730,29 +1726,28 @@ footer .line-sp {
     margin-top: 50px;
   }
 }
-#metaleaf .metaleaf_area {
+#metaleaf .metaleaf-area {
   position: relative;
   width: 100%;
   height: 600px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area {
+  #metaleaf .metaleaf-area {
     height: 100vh;
   }
 }
-#metaleaf .metaleaf_area .bg {
+#metaleaf .metaleaf-area .bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.5;
   z-index: 1;
 }
-#metaleaf .metaleaf_area .feature {
+#metaleaf .metaleaf-area .feature {
   position: absolute;
   width: 120px;
   height: 120px;
@@ -1764,78 +1759,77 @@ footer .line-sp {
   cursor: pointer;
   transition: 0.6s;
 }
-#metaleaf .metaleaf_area .feature:hover {
+#metaleaf .metaleaf-area .feature:hover {
   transform: scale(1.2);
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .feature {
+  #metaleaf .metaleaf-area .feature {
     width: 100px;
     height: 100px;
     border: 2px solid #E97C27;
   }
 }
-#metaleaf .metaleaf_area .feature .icon {
+#metaleaf .metaleaf-area .feature .icon {
   width: 56px;
   height: 56px;
   margin: 16px auto 0;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .feature .icon {
+  #metaleaf .metaleaf-area .feature .icon {
     margin: 8px auto 0;
   }
 }
-#metaleaf .metaleaf_area .feature .icon img {
+#metaleaf .metaleaf-area .feature .icon img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
-#metaleaf .metaleaf_area .feature p {
+#metaleaf .metaleaf-area .feature p {
   font-size: 0.625rem;
   text-align: center;
 }
-#metaleaf .metaleaf_area .f1 {
+#metaleaf .metaleaf-area .f1 {
   top: 40%;
   left: 48%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f1 {
+  #metaleaf .metaleaf-area .f1 {
     left: 35%;
   }
 }
-#metaleaf .metaleaf_area .f2 {
+#metaleaf .metaleaf-area .f2 {
   bottom: 30%;
   right: 20%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f2 {
+  #metaleaf .metaleaf-area .f2 {
     right: 5%;
   }
 }
-#metaleaf .metaleaf_area .f3 {
+#metaleaf .metaleaf-area .f3 {
   top: 25%;
   left: 25%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f3 {
+  #metaleaf .metaleaf-area .f3 {
     left: 10%;
   }
 }
-#metaleaf .metaleaf_area .f4 {
+#metaleaf .metaleaf-area .f4 {
   top: 12%;
   right: 25%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f4 {
+  #metaleaf .metaleaf-area .f4 {
     right: 10%;
   }
 }
-#metaleaf .metaleaf_area .f5 {
+#metaleaf .metaleaf-area .f5 {
   bottom: 15%;
   left: 15%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f5 {
+  #metaleaf .metaleaf-area .f5 {
     left: 5%;
   }
 }
@@ -1880,18 +1874,17 @@ footer .line-sp {
 .modal-content .close:hover {
   transform: scale(1.2);
 }
-.modal-content .modal_img {
+.modal-content .modal-img {
   width: 100%;
   height: 50%;
   border-radius: 10px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-top: 16px;
 }
-.modal-content .modal_text {
+.modal-content .modal-text {
   margin: 8px 0;
 }
-.modal-content .modal_text .modal_title {
+.modal-content .modal-text .modal-title {
   font-size: 1.125rem;
   font-weight: bold;
   text-align: center;
@@ -1931,8 +1924,7 @@ footer .line-sp {
   height: 250px;
   position: relative;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: translateY(-25px);
 }
 #curriculum .swiper .circle-wrap .step-title {
@@ -2035,8 +2027,7 @@ footer .line-sp {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;
