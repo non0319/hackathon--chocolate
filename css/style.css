@@ -1726,18 +1726,18 @@ footer .line-sp {
     margin-top: 50px;
   }
 }
-#metaleaf .metaleaf_area {
+#metaleaf .metaleaf-area {
   position: relative;
   width: 100%;
   height: 600px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area {
+  #metaleaf .metaleaf-area {
     height: 100vh;
   }
 }
-#metaleaf .metaleaf_area .bg {
+#metaleaf .metaleaf-area .bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -1747,7 +1747,7 @@ footer .line-sp {
   opacity: 0.5;
   z-index: 1;
 }
-#metaleaf .metaleaf_area .feature {
+#metaleaf .metaleaf-area .feature {
   position: absolute;
   width: 120px;
   height: 120px;
@@ -1759,77 +1759,77 @@ footer .line-sp {
   cursor: pointer;
   transition: 0.6s;
 }
-#metaleaf .metaleaf_area .feature:hover {
+#metaleaf .metaleaf-area .feature:hover {
   transform: scale(1.2);
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .feature {
+  #metaleaf .metaleaf-area .feature {
     width: 100px;
     height: 100px;
     border: 2px solid #E97C27;
   }
 }
-#metaleaf .metaleaf_area .feature .icon {
+#metaleaf .metaleaf-area .feature .icon {
   width: 56px;
   height: 56px;
   margin: 16px auto 0;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .feature .icon {
+  #metaleaf .metaleaf-area .feature .icon {
     margin: 8px auto 0;
   }
 }
-#metaleaf .metaleaf_area .feature .icon img {
+#metaleaf .metaleaf-area .feature .icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-#metaleaf .metaleaf_area .feature p {
+#metaleaf .metaleaf-area .feature p {
   font-size: 0.625rem;
   text-align: center;
 }
-#metaleaf .metaleaf_area .f1 {
+#metaleaf .metaleaf-area .f1 {
   top: 40%;
   left: 48%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f1 {
+  #metaleaf .metaleaf-area .f1 {
     left: 35%;
   }
 }
-#metaleaf .metaleaf_area .f2 {
+#metaleaf .metaleaf-area .f2 {
   bottom: 30%;
   right: 20%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f2 {
+  #metaleaf .metaleaf-area .f2 {
     right: 5%;
   }
 }
-#metaleaf .metaleaf_area .f3 {
+#metaleaf .metaleaf-area .f3 {
   top: 25%;
   left: 25%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f3 {
+  #metaleaf .metaleaf-area .f3 {
     left: 10%;
   }
 }
-#metaleaf .metaleaf_area .f4 {
+#metaleaf .metaleaf-area .f4 {
   top: 12%;
   right: 25%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f4 {
+  #metaleaf .metaleaf-area .f4 {
     right: 10%;
   }
 }
-#metaleaf .metaleaf_area .f5 {
+#metaleaf .metaleaf-area .f5 {
   bottom: 15%;
   left: 15%;
 }
 @media (max-width: 768px) {
-  #metaleaf .metaleaf_area .f5 {
+  #metaleaf .metaleaf-area .f5 {
     left: 5%;
   }
 }
@@ -1874,17 +1874,17 @@ footer .line-sp {
 .modal-content .close:hover {
   transform: scale(1.2);
 }
-.modal-content .modal_img {
+.modal-content .modal-img {
   width: 100%;
   height: 50%;
   border-radius: 10px;
   object-fit: contain;
   margin-top: 16px;
 }
-.modal-content .modal_text {
+.modal-content .modal-text {
   margin: 8px 0;
 }
-.modal-content .modal_text .modal_title {
+.modal-content .modal-text .modal-title {
   font-size: 1.125rem;
   font-weight: bold;
   text-align: center;
