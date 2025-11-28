@@ -47,7 +47,7 @@ img {
 }
 @media (max-width: 768px) {
   .large {
-    font-size: 32px;
+    font-size: 1.8rem;
   }
 }
 
@@ -80,7 +80,12 @@ img {
   color: #4B80AA;
 }
 .section-header .section-title .large {
-  font-size: 64px;
+  font-size: 4rem;
+}
+@media (max-width: 768px) {
+  .section-header .section-title .large {
+    font-size: 1.8rem;
+  }
 }
 @media (max-width: 768px) {
   .section-header .section-title .large {
@@ -1702,7 +1707,7 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .instagram-area .instagram-area-text {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 .instagram-area .instagram-post {
@@ -1917,6 +1922,11 @@ footer .line-sp {
   font-size: 1.125rem;
   text-align: center;
   margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  #cta1 .cta_lead, #cta2 .cta_lead {
+    font-size: 1rem;
+  }
 }
 
 #curriculum .swiper {

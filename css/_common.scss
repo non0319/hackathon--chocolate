@@ -51,7 +51,7 @@ img {
     color: $main-color;
 
     @include sp {
-        font-size: 32px;
+        font-size: 1.8rem;
     }
 }
 
@@ -88,9 +88,9 @@ img {
         }
 
         .large {
-            font-size: 64px;
+            font-size: 4rem;
 
-            @include sp {
+            @include sp{
                 font-size: 1.8rem;
             }
         }
