@@ -67,7 +67,7 @@ img {
         padding-bottom: $clip-depth + 10px;
 
         @include sp {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
         }
 
         // 線の描画
@@ -89,6 +89,10 @@ img {
 
         .large {
             font-size: 64px;
+
+            @include sp {
+                font-size: 1.8rem;
+            }
         }
     }
 }
@@ -100,8 +104,9 @@ img {
     margin: 40px 0 80px;
 
     @include sp {
-        font-size: 1.25rem;
+        font-size: 1rem;
         margin: 20px;
+        text-align: left;
     }
 }
 
@@ -123,10 +128,10 @@ img {
     }
 }
 
-.pc-br{
+.pc-br {
     display: block;
 
-    @include sp{
+    @include sp {
         display: none;
     }
 }
@@ -147,20 +152,20 @@ img {
     gap: 8px;
     background-color: $accent-color;
     color: #fff;
-    max-width:  380px;
+    max-width: 380px;
     height: 65px;
     border-radius: 20px;
     margin: 20px auto 0;
 
-    @include sp{
+    @include sp {
         width: 100%;
     }
 
-    img{
+    img {
         width: 60px;
         height: 12px;
 
-        @include sp{
+        @include sp {
             display: none;
         }
     }

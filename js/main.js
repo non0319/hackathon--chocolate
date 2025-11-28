@@ -464,7 +464,7 @@ $(window).on('scroll load', function () {
       var target = $(this).offset().top;
 
       // 下スクロールで画面下から200px通過したタイミング
-      if (scroll > target - windowHeight - 750) {
+      if (scroll > target - windowHeight +20) {
         if (!$el.hasClass('roll-in')) {
           setTimeout(function () {
             $el.addClass('roll-in');
