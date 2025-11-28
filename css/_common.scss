@@ -123,10 +123,10 @@ img {
     }
 }
 
-.pc-br{
+.pc-br {
     display: block;
 
-    @include sp{
+    @include sp {
         display: none;
     }
 }
@@ -147,21 +147,56 @@ img {
     gap: 8px;
     background-color: $accent-color;
     color: #fff;
-    max-width:  380px;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
+    max-width: 380px;
     height: 65px;
     border-radius: 20px;
+    transition: .6s;
     margin: 20px auto 0;
+    position: relative;
+    overflow: hidden;
 
-    @include sp{
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+        transform: skewX(-25deg);
+        pointer-events: none;
+    }
+
+    &:hover {
+        background-color: darken($accent-color, 5%);
+
+        &::before {
+            animation: shine 0.7s;
+        }
+    }
+
+    &:active {
+        top: 4px;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 25%);
+    }
+
+    @include sp {
         width: 100%;
     }
 
-    img{
+    img {
         width: 60px;
         height: 12px;
 
-        @include sp{
+        @include sp {
             display: none;
         }
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: 100%;
     }
 }
