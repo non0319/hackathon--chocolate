@@ -38,8 +38,9 @@
             height: 85vh;
 
             @include sp{
-                height: 3000px; 
-            }
+                height: 2800px;
+                pointer-events: none;
+            }    
         }
     }
 }
@@ -63,6 +64,7 @@
     z-index: 10;
 
     @include sp {
+        position: absolute;
         top: 20px;
         flex-direction: column;
         flex-wrap: wrap;
@@ -137,6 +139,7 @@
 
         @include sp{
             font-size: 0.875rem;
+            text-align: left;
         }
     }
 
@@ -158,6 +161,7 @@
 
             .instagram-media {
                 width: 100%;
+                pointer-events: auto !important;
             }
         }
 
