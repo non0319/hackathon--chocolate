@@ -1,4 +1,93 @@
+/*=================================================
+スクロール時の画像フェード表示
+===================================================*/
+// スクロール時のイベント
+$(window).scroll(function () {
+  // fadeinクラスに対して順に処理を行う
+  $(".fadein").each(function () {
+    // スクロールした距離
+    let scroll = $(window).scrollTop();
+    // fadeinクラスの要素までの距離
+    let target = $(this).offset().top;
+    // 画面の高さ
+    let windowHeight = $(window).height();
+    // fadeinクラスの要素が画面下にきてから200px通過した
+    // したタイミングで要素を表示
+    if (scroll > target - windowHeight + 200) {
+      $(this).css("opacity", "1");
+      $(this).css("transform", "translateY(0)");
+    }
+  });
+});
 
+
+/*=================================================
+ハンバーガ―メニュー & スムーススクロール
+===================================================*/
+$(document).ready(function () {
+
+  const header = $("header");
+
+  // ハンバーガー開閉
+  $(".hamburger").on("click", function (e) {
+    e.stopPropagation();
+    header.toggleClass("open");
+  });
+
+  // メニューリンククリック
+  $(".flip-nav a").on("click", function (e) {
+    if ($(this).hasClass('insta-link')) {
+      header.removeClass("open");
+      return true;
+    }
+    const isSP = $(window).width() <= 768; // SP判定
+
+    if (isSP) {
+      // SP版はリンク本来の動作のみ
+      header.removeClass("open"); // メニュー閉じる
+      return true;
+    }
+
+    // PC版のみスムーススクロール
+    e.preventDefault();
+    const target = $(this).attr("href");
+    $("html, body").stop().animate({
+      scrollTop: $(target).offset().top - 100 // header高さ分オフセット
+    }, 600);
+
+    header.removeClass("open");
+  });
+
+  // メニュー以外クリックで閉じる
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest("header").length) {
+      header.removeClass("open");
+    }
+  });
+
+  // 汎用スムーススクロール（PC版のみ）
+  $('a[href^="#"]:not(.insta-link)').on("click", function (e) {
+    const isSP = $(window).width() <= 768; // SP判定
+
+    if (isSP) {
+      // SP版は何もしない（デフォルトのジャンプ動作）
+      return true;
+    }
+
+    // PC版のみスムーススクロール
+    e.preventDefault();
+    const target = $(this).attr("href");
+    $("html, body").stop().animate({
+      scrollTop: $(target).offset().top - 100
+    }, 600);
+  });
+
+});
+
+
+/*=================================================
+strengths
+===================================================*/
 document.addEventListener('DOMContentLoaded', () => {
   // ================================================
   // I. 要素取得と定数定義
@@ -155,87 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/*=================================================
-スクロール時の画像フェード表示
-===================================================*/
-// スクロール時のイベント
-$(window).scroll(function () {
-  // fadeinクラスに対して順に処理を行う
-  $(".fadein").each(function () {
-    // スクロールした距離
-    let scroll = $(window).scrollTop();
-    // fadeinクラスの要素までの距離
-    let target = $(this).offset().top;
-    // 画面の高さ
-    let windowHeight = $(window).height();
-    // fadeinクラスの要素が画面下にきてから200px通過した
-    // したタイミングで要素を表示
-    if (scroll > target - windowHeight + 200) {
-      $(this).css("opacity", "1");
-      $(this).css("transform", "translateY(0)");
-    }
-  });
-});
-
-
-/*=================================================
-ハンバーガ―メニュー & スムーススクロール
-===================================================*/
-$(document).ready(function () {
-
-  const header = $("header");
-
-  // ハンバーガー開閉
-  $(".hamburger").on("click", function (e) {
-    e.stopPropagation();
-    header.toggleClass("open");
-  });
-
-  // メニューリンククリック
-  $(".flip-nav a").on("click", function (e) {
-    const isSP = $(window).width() <= 768; // SP判定
-
-    if (isSP) {
-      // SP版はリンク本来の動作のみ
-      header.removeClass("open"); // メニュー閉じる
-      return true;
-    }
-
-    // PC版のみスムーススクロール
-    e.preventDefault();
-    const target = $(this).attr("href");
-    $("html, body").stop().animate({
-      scrollTop: $(target).offset().top - 100 // header高さ分オフセット
-    }, 600);
-
-    header.removeClass("open");
-  });
-
-  // メニュー以外クリックで閉じる
-  $(document).on("click", function (e) {
-    if (!$(e.target).closest("header").length) {
-      header.removeClass("open");
-    }
-  });
-
-  // 汎用スムーススクロール（PC版のみ）
-  $('a[href^="#"]').on("click", function (e) {
-    const isSP = $(window).width() <= 768; // SP判定
-
-    if (isSP) {
-      // SP版は何もしない（デフォルトのジャンプ動作）
-      return true;
-    }
-
-    // PC版のみスムーススクロール
-    e.preventDefault();
-    const target = $(this).attr("href");
-    $("html, body").stop().animate({
-      scrollTop: $(target).offset().top - 100
-    }, 600);
-  });
-
-});
 
 /*=================================================
  change
@@ -244,16 +252,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const storyControls = document.querySelector('.story-controls');
   const slider = document.querySelector('.story-slider');
 
-  // PCビューではJSによるスライド処理をスキップ
-  const isPC = () => window.innerWidth >= 768;
+  // ブレイクポイントの定義 (SCSSの$breakpoint-pc: 768pxと一致)
+  const BREAKPOINT = 769;
+
+  // PCビューの判定 (clientWidthを使用し、より安定した判定を試みる)
+  const isPC = () => window.innerWidth >= BREAKPOINT; // window.innerWidth で問題ないはずですが、念のためそのまま
 
   if (storyControls && slider) {
-    let isAfterActive = false;
+    let isAfterActive = false; // モバイルの状態 (Before=false, After=true)
+
+    const setActiveButton = (target) => {
+      // 適切なボタンに 'active' クラスを付与
+      document.querySelectorAll('.control-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-target') === target) {
+          btn.classList.add('active');
+        }
+      });
+    };
 
     const updateSliderPosition = () => {
+      // PCの場合: スライド位置をリセット
       if (isPC()) {
         slider.style.transform = 'translateX(0)';
-      } else {
+      }
+      // モバイルの場合: 記憶している状態に基づきスライド位置を適用
+      else {
         if (isAfterActive) {
           slider.style.transform = 'translateX(-50%)';
         } else {
@@ -264,15 +288,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // コントロールボタンのイベントリスナー設定
     storyControls.addEventListener('click', (e) => {
+      // PCの場合、ボタンクリック処理は無視
       if (isPC()) return;
 
       const targetButton = e.target.closest('.control-btn');
       if (!targetButton) return;
 
-      document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
-      targetButton.classList.add('active');
-
       const target = targetButton.getAttribute('data-target');
+
+      setActiveButton(target);
 
       if (target === 'before') {
         slider.style.transform = 'translateX(0)';
@@ -283,12 +307,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 画面サイズ変更時にも位置を調整
+    // 画面サイズ変更時にも位置を調整 (PC/モバイル切り替え時に特に重要)
     window.addEventListener('resize', updateSliderPosition);
 
-    // 初期ロード時も位置を調整し、Beforeをアクティブにする
+    // ★ 初期ロード時の調整
+    // 初期状態は'before'に設定
+    isAfterActive = false;
+
+    // 初期位置とボタンの状態を設定
     updateSliderPosition();
-    document.querySelector('.control-btn[data-target="before"]').click();
+    setActiveButton('before');
   }
 });
 

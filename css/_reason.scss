@@ -1,6 +1,10 @@
 @use '_mixin' as *;
 
 #reason {
+    .reasons-list {
+        padding-top: 60px;
+    }
+
     .reason-item {
         display: flex;
         justify-content: space-between;
@@ -30,7 +34,7 @@
 .infinite-marquee {
     width: 100%;
     overflow: hidden;
-    padding: 40px 0; // セクション間の余白は調整可
+    padding: 40px 0;
     background: transparent;
 
     .marquee-track {
@@ -94,10 +98,10 @@
 
     .infinite-marquee {
         padding: 0;
-        margin-bottom: 80px;
-        
+        margin-bottom: 40px;
+
         span {
-            font-size: 200px;
+            font-size: 150px;
         }
 
     }
