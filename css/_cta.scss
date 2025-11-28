@@ -8,6 +8,10 @@
         font-size: 1.125rem;
         text-align: center;
         margin-bottom: 40px;
+
+        @include sp{
+            font-size: 1rem;
+        }
     }
 }
 
