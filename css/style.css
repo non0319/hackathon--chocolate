@@ -574,8 +574,7 @@ footer .line-sp {
 .mainvisual .mv-right ul.image-slider li img {
   min-width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .mainvisual .mv-right .sit-img {
@@ -635,8 +634,7 @@ footer .line-sp {
     right: 0;
   }
   .mainvisual .mv-right ul.image-slider li img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mainvisual .mv-right .sit-img {
     max-width: 10%;
@@ -978,8 +976,7 @@ footer .line-sp {
 .card-image-wrapper .card-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-text-content {
@@ -1243,8 +1240,7 @@ footer .line-sp {
   width: 90%;
   height: auto;
   max-height: 70%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border-radius: 8px;
   margin: 10px 0;
   filter: none;
@@ -1421,8 +1417,7 @@ footer .line-sp {
   width: 200px;
   height: 200px;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
   margin: 0 auto;
 }
@@ -1455,8 +1450,7 @@ footer .line-sp {
   display: block;
   width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 16px;
   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
 }
@@ -1549,8 +1543,7 @@ footer .line-sp {
 .link-btn-blue img {
   width: 40px;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 @keyframes shine {
@@ -1575,6 +1568,12 @@ footer .line-sp {
   width: 100%;
   height: auto;
 }
+@media (max-width: 768px) {
+  #teachers .teachers-area {
+    position: static;
+    height: auto;
+  }
+}
 #teachers .teachers-area .teachers-header {
   position: sticky;
   top: 100px;
@@ -1593,7 +1592,7 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   #teachers .teachers-area .teacher-list-area {
-    height: 120vh;
+    height: 3000px;
   }
 }
 
@@ -1605,10 +1604,10 @@ footer .line-sp {
   height: 350px;
   background: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  opacity: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  opacity: 0;
   gap: 40px;
   padding: 40px 100px;
   transform: translateY(300px);
@@ -1617,15 +1616,14 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .list {
-    top: 300px;
+    top: 20px;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
     gap: 16px;
     width: 100%;
-    height: 70%;
+    height: 560px;
     border-radius: 16px;
-    transform: translateY(50px);
     padding: 8px;
     margin: 0 auto 20px;
   }
@@ -1634,8 +1632,7 @@ footer .line-sp {
   display: block;
   width: 30%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   .list .list-img {
@@ -1647,8 +1644,7 @@ footer .line-sp {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .list .list-content {
   width: 68%;
@@ -1747,8 +1743,7 @@ footer .line-sp {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.5;
   z-index: 1;
 }
@@ -1787,8 +1782,7 @@ footer .line-sp {
 #metaleaf .metaleaf_area .feature .icon img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 #metaleaf .metaleaf_area .feature p {
   font-size: 0.625rem;
@@ -1884,8 +1878,7 @@ footer .line-sp {
   width: 100%;
   height: 50%;
   border-radius: 10px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-top: 16px;
 }
 .modal-content .modal_text {
@@ -1931,8 +1924,7 @@ footer .line-sp {
   height: 250px;
   position: relative;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: translateY(-25px);
 }
 #curriculum .swiper .circle-wrap .step-title {
@@ -2035,8 +2027,7 @@ footer .line-sp {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;
