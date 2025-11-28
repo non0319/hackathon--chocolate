@@ -67,7 +67,7 @@ img {
         padding-bottom: $clip-depth + 10px;
 
         @include sp {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
         }
 
         // 線の描画
@@ -89,6 +89,10 @@ img {
 
         .large {
             font-size: 64px;
+
+            @include sp {
+                font-size: 1.8rem;
+            }
         }
     }
 }

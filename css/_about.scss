@@ -15,7 +15,6 @@
     }
 }
 
-
 .speech-bubbles {
     li.bubble {
         z-index: 2;
@@ -164,4 +163,10 @@
             text-align: left;
         }
     }
+}
+
+@media(max-width: 440px) {
+        .section-intro {
+                    margin: 200px auto 160px;
+        }
 }
