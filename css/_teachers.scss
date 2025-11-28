@@ -15,31 +15,30 @@
         position: relative;
             width: 100%;
             height: auto;
-            
-            // @include sp{
-            //     height: calc(260px * 4);
-            // }
 
+            @include sp{
+                position: static;
+                height: auto;
+            }
+    
         .teachers-header {
             position: sticky;
             top: 100px;
             text-align: center;
-            margin-bottom: 80px;
 
             @include sp{
                 position: static;
                 top: 0;
-                margin-bottom: 20px;
             }
         }
 
         .teacher-list-area {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: 85vh;
 
             @include sp{
-                height: 50vh;
+                height: 3000px; 
             }
         }
     }
@@ -53,10 +52,10 @@
     height: 350px;
     background: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    opacity: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    opacity: 0;
     gap: 40px;
     padding: 40px 100px;
     transform: translateY(300px);
@@ -69,12 +68,11 @@
         flex-wrap: wrap;
         align-content: space-around;
         gap: 16px;
-        width: 360px;
+        width: 100%;
         height: 560px;
         border-radius: 16px;
-        transform: translateY(50px);
         padding: 8px;
-        margin-top: 20px;
+        margin: 0 auto 20px;
     }
 
     .list-img {

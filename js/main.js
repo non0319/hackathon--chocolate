@@ -391,30 +391,49 @@ window.addEventListener("load", () => {
 
   if (!lists.length) return;
 
-  // SP/PC別の高さ
-  const listHeight = window.innerWidth <= 768 ? 260 : 400;
-  const pinDistance = lists.length * listHeight;
+  const isSP = window.innerWidth <= 768; 
 
-  // 初期状態
-  gsap.set(lists, { opacity: 0, y: 100 });
+  // CSSで設定されたリストアイテムの高さ
+  const listHeight = isSP ? 560 : 400; 
+  // Pinを維持する総スクロール距離
+  const pinDistance = lists.length * listHeight; 
+  
+  // 各カードが次のカードに切り替わるまでのスクロール間隔を設定
+  // listHeight の 50% の距離で次のカードが上がり始めます (例: 280px ごと)
+  const SCROLL_INTERVAL = listHeight * 0.5; // 調整可能
 
-  gsap.timeline({
+  // 初期状態: 全てのリストアイテムを非表示に設定
+  // y の初期値はCSSの top: 80px が適用される
+  gsap.set(lists, { opacity: 0, y: 100 }); 
+
+  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: listArea,
-      start: "top top",
-      end: "+=" + pinDistance,
+      // Pin開始位置
+      start: isSP ? "top top+=50" : "top top", 
+      // Pin終了位置: Pin距離 2240px
+      end: "+=" + pinDistance, 
       scrub: true,
       pin: listArea,
-      pinSpacing: true,
+      pinSpacing: isSP ? false : true, 
       anticipatePin: 1
     }
-  }).to(lists, {
-    opacity: 1,
-    y: 0,
-    duration: 0.6,
-    stagger: 0.8
+  });
+
+  lists.forEach((item, i) => {
+    tl.to(
+      item,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+      },
+      i * 0.8
+    );
   });
 });
+
+
 
 
 /*=================================================
