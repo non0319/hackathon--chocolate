@@ -1,9 +1,6 @@
 @use '_mixin' as *;
 
 #reason {
-    .reasons-list {
-        padding-top: 60px;
-    }
 
     .reason-item {
         display: flex;
@@ -17,7 +14,6 @@
 
         .text-area {
             width: 55%;
-            padding: 20px;
 
             h3.reason-subtitle {
                 font-size: 1.5rem;
@@ -69,7 +65,6 @@
     #reason {
         .reason-item {
             flex-direction: column;
-            margin-bottom: 40px;
 
             .icon-area {
                 width: 50%;
