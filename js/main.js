@@ -391,30 +391,36 @@ window.addEventListener("load", () => {
 
   if (!lists.length) return;
 
-  // SP/PC別の高さ
-  const listHeight = window.innerWidth <= 768 ? 260 : 400;
-  const pinDistance = lists.length * listHeight;
+  const isSP = window.innerWidth <= 768;
 
-  // 初期状態
-  gsap.set(lists, { opacity: 0, y: 100 });
+  if (!isSP) {
+    const listHeight = 400; // PCカード高さ
+    const pinDistance = lists.length * listHeight;
 
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: listArea,
-      start: "top top",
-      end: "+=" + pinDistance,
-      scrub: true,
-      pin: listArea,
-      pinSpacing: true,
-      anticipatePin: 1
-    }
-  }).to(lists, {
-    opacity: 1,
-    y: 0,
-    duration: 0.6,
-    stagger: 0.8
-  });
+    gsap.set(lists, { opacity: 0, y: 150 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: listArea,
+        start: "top top",
+        end: "+=" + pinDistance,
+        scrub: true,
+        pin: listArea,
+        pinSpacing: true,
+        anticipatePin: 1
+      }
+    });
+
+    lists.forEach((item, i) => {
+      tl.to(item, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6
+      }, i * 0.8);
+    });
+  }
 });
+
 
 
 /*=================================================
