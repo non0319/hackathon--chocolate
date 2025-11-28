@@ -87,11 +87,6 @@ img {
     font-size: 1.8rem;
   }
 }
-@media (max-width: 768px) {
-  .section-header .section-title .large {
-    font-size: 1.8rem;
-  }
-}
 
 .lead {
   font-size: 1.5rem;
@@ -585,8 +580,7 @@ footer .line-sp {
 .mainvisual .mv-right ul.image-slider li img {
   min-width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .mainvisual .mv-right .sit-img {
@@ -646,8 +640,7 @@ footer .line-sp {
     right: 0;
   }
   .mainvisual .mv-right ul.image-slider li img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mainvisual .mv-right .sit-img {
     max-width: 10%;
@@ -989,8 +982,7 @@ footer .line-sp {
 .card-image-wrapper .card-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-text-content {
@@ -1254,8 +1246,7 @@ footer .line-sp {
   width: 90%;
   height: auto;
   max-height: 70%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border-radius: 8px;
   margin: 10px 0;
   filter: none;
@@ -1432,8 +1423,7 @@ footer .line-sp {
   width: 200px;
   height: 200px;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
   margin: 0 auto;
 }
@@ -1466,8 +1456,7 @@ footer .line-sp {
   display: block;
   width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 16px;
   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
 }
@@ -1560,8 +1549,7 @@ footer .line-sp {
 .link-btn-blue img {
   width: 40px;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 @keyframes shine {
@@ -1610,7 +1598,8 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   #teachers .teachers-area .teacher-list-area {
-    height: 3000px;
+    height: 2800px;
+    pointer-events: none;
   }
 }
 
@@ -1634,6 +1623,7 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .list {
+    position: absolute;
     top: 20px;
     flex-direction: column;
     flex-wrap: wrap;
@@ -1650,8 +1640,7 @@ footer .line-sp {
   display: block;
   width: 30%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   .list .list-img {
@@ -1663,8 +1652,7 @@ footer .line-sp {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .list .list-content {
   width: 68%;
@@ -1708,6 +1696,7 @@ footer .line-sp {
 @media (max-width: 768px) {
   .instagram-area .instagram-area-text {
     font-size: 0.875rem;
+    text-align: left;
   }
 }
 .instagram-area .instagram-post {
@@ -1730,6 +1719,7 @@ footer .line-sp {
 .instagram-area .instagram-post .post-kakashi .instagram-media,
 .instagram-area .instagram-post .post-iruka .instagram-media {
   width: 100%;
+  pointer-events: auto !important;
 }
 @media (max-width: 768px) {
   .instagram-area .instagram-post .post-iruka {
@@ -1763,8 +1753,7 @@ footer .line-sp {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.5;
   z-index: 1;
 }
@@ -1803,8 +1792,7 @@ footer .line-sp {
 #metaleaf .metaleaf-area .feature .icon img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 #metaleaf .metaleaf-area .feature p {
   font-size: 0.625rem;
@@ -1900,8 +1888,7 @@ footer .line-sp {
   width: 100%;
   height: 50%;
   border-radius: 10px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-top: 16px;
 }
 .modal-content .modal-text {
@@ -1952,8 +1939,7 @@ footer .line-sp {
   height: 250px;
   position: relative;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: translateY(-25px);
 }
 #curriculum .swiper .circle-wrap .step-title {
@@ -2056,8 +2042,7 @@ footer .line-sp {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;
