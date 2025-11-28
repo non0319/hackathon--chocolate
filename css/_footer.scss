@@ -19,9 +19,9 @@ footer {
             padding: 20px;
             margin-left: 20px;
 
-           @include sp{
-            margin-inline: 5px;
-           }
+            @include sp {
+                margin-inline: 5px;
+            }
         }
 
         p {
@@ -79,7 +79,7 @@ footer {
             background-color: #79C2B6;
             border-radius: 20px;
             max-width: 600px;
-            width: 100%;
+            width: 95%;
             height: 65px;
             display: flex;
             align-items: center;
