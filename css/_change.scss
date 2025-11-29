@@ -230,6 +230,8 @@ $arrow-width: 60px; // 矢印の幅
 // --------------------------------------------------
 .after-panel {
     background-color: #fff;
+    height: 480px;
+    justify-content: flex-start;
 
     .label {
         background-color: $accent-color;
