@@ -38,8 +38,9 @@
             height: 85vh;
 
             @include sp{
-                height: 3000px; 
-            }
+                height: 2800px;
+                pointer-events: none;
+            }    
         }
     }
 }
@@ -63,9 +64,9 @@
     z-index: 10;
 
     @include sp {
-        top: 20px;
-        flex-direction: column;
-        flex-wrap: wrap;
+        position: absolute;
+        top: 0px;
+        display: block;
         align-content: space-around;
         gap: 16px;
         width: 100%;
@@ -82,8 +83,9 @@
         object-fit: cover;
 
         @include sp {
-            width: 90%;
+            width: 100%;
             height: 200px;
+            margin: 0 auto;
         }
 
         img {
@@ -104,16 +106,17 @@
         .teacher-name {
             font-size: 1.5rem;
             color: $main-color;
-            font-weight: 600;
+            font-weight: bold;
             margin-bottom: 10px;
 
             @include sp {
+                font-size: 1.125rem;
                 margin-top: 8px;
             }
         }
 
         .point {
-            font-weight: 600;
+            font-weight: bold;
             margin-bottom: 16px;
         }
 
@@ -136,7 +139,7 @@
         font-size: 1.125rem;
 
         @include sp{
-            font-size: 1rem;
+            font-size: 0.875rem;
         }
     }
 
@@ -158,6 +161,7 @@
 
             .instagram-media {
                 width: 100%;
+                pointer-events: auto !important;
             }
         }
 

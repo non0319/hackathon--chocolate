@@ -47,7 +47,7 @@ img {
 }
 @media (max-width: 768px) {
   .large {
-    font-size: 32px;
+    font-size: 1.8rem;
   }
 }
 
@@ -62,7 +62,7 @@ img {
 }
 @media (max-width: 768px) {
   .section-header .section-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 .section-header .section-title::after {
@@ -80,7 +80,12 @@ img {
   color: #4B80AA;
 }
 .section-header .section-title .large {
-  font-size: 64px;
+  font-size: 4rem;
+}
+@media (max-width: 768px) {
+  .section-header .section-title .large {
+    font-size: 1.8rem;
+  }
 }
 
 .lead {
@@ -91,8 +96,9 @@ img {
 }
 @media (max-width: 768px) {
   .lead {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin: 20px;
+    text-align: left;
   }
 }
 
@@ -468,7 +474,7 @@ footer .line-sp {
     background-color: #79C2B6;
     border-radius: 20px;
     max-width: 600px;
-    width: 100%;
+    width: 95%;
     height: 65px;
     display: flex;
     align-items: center;
@@ -778,8 +784,10 @@ footer .line-sp {
     text-align: left;
   }
 }
-#reason .reasons-list {
-  padding-top: 60px;
+@media (max-width: 440px) {
+  .section-intro {
+    margin: 200px auto 100px;
+  }
 }
 #reason .reason-item {
   display: flex;
@@ -792,7 +800,6 @@ footer .line-sp {
 }
 #reason .reason-item .text-area {
   width: 55%;
-  padding: 20px;
 }
 #reason .reason-item .text-area h3.reason-subtitle {
   font-size: 1.5rem;
@@ -831,7 +838,6 @@ footer .line-sp {
 @media (max-width: 768px) {
   #reason .reason-item {
     flex-direction: column;
-    margin-bottom: 40px;
   }
   #reason .reason-item .icon-area {
     width: 50%;
@@ -870,7 +876,7 @@ footer .line-sp {
     grid-template-columns: 1fr;
     place-items: center;
     gap: 16px;
-    margin: 80px auto;
+    margin: 40px auto;
     padding: 0 16px;
     perspective: none;
   }
@@ -1599,7 +1605,8 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   #teachers .teachers-area .teacher-list-area {
-    height: 3000px;
+    height: 2800px;
+    pointer-events: none;
   }
 }
 
@@ -1623,9 +1630,9 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .list {
-    top: 20px;
-    flex-direction: column;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 0px;
+    display: block;
     align-content: space-around;
     gap: 16px;
     width: 100%;
@@ -1644,8 +1651,9 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .list .list-img {
-    width: 90%;
+    width: 100%;
     height: 200px;
+    margin: 0 auto;
   }
 }
 .list .list-img img {
@@ -1666,16 +1674,17 @@ footer .line-sp {
 .list .list-content .teacher-name {
   font-size: 1.5rem;
   color: #4B80AA;
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 @media (max-width: 768px) {
   .list .list-content .teacher-name {
+    font-size: 1.125rem;
     margin-top: 8px;
   }
 }
 .list .list-content .point {
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 16px;
 }
 .list .list-content .comment {
@@ -1696,7 +1705,7 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .instagram-area .instagram-area-text {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 .instagram-area .instagram-post {
@@ -1719,6 +1728,7 @@ footer .line-sp {
 .instagram-area .instagram-post .post-kakashi .instagram-media,
 .instagram-area .instagram-post .post-iruka .instagram-media {
   width: 100%;
+  pointer-events: auto !important;
 }
 @media (max-width: 768px) {
   .instagram-area .instagram-post .post-iruka {
@@ -1912,10 +1922,15 @@ footer .line-sp {
   text-align: center;
   margin-bottom: 40px;
 }
+@media (max-width: 768px) {
+  #cta1 .cta_lead, #cta2 .cta_lead {
+    font-size: 1rem;
+  }
+}
 
 #curriculum .swiper {
   width: 100%;
-  height: 60vh;
+  height: 64vh;
 }
 #curriculum .swiper .circle-wrap {
   width: 320px;
@@ -2020,6 +2035,9 @@ footer .line-sp {
 @media (max-width: 768px) {
   #sp-curriculum {
     display: block;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 #sp-curriculum .sp-step {
@@ -2144,7 +2162,7 @@ footer .line-sp {
 
 .question {
   position: relative;
-  margin-top: 30px;
+  margin-top: 120px;
 }
 .question h5 {
   font-size: 40px;
