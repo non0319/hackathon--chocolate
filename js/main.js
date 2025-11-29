@@ -50,10 +50,19 @@ $(document).ready(function () {
 
     // PC版のみスムーススクロール
     e.preventDefault();
-    const target = $(this).attr("href");
-    $("html, body").stop().animate({
-      scrollTop: $(target).offset().top - 100 // header高さ分オフセット
-    }, 600);
+    let target = $(this).attr("href");
+    
+    // モバイル版セクションへの対応
+    if (isSP && target === "#curriculum") {
+      target = "#sp-curriculum";
+    }
+    
+    const offset = $(target).offset();
+    if (offset) {
+      $("html, body").stop().animate({
+        scrollTop: offset.top - 100 // header高さ分オフセット
+      }, 600);
+    }
 
     header.removeClass("open");
   });
@@ -76,15 +85,22 @@ $(document).ready(function () {
 
     // PC版のみスムーススクロール
     e.preventDefault();
-    const target = $(this).attr("href");
-    $("html, body").stop().animate({
-      scrollTop: $(target).offset().top - 100
-    }, 600);
+    let target = $(this).attr("href");
+    
+    // モバイル版セクションへの対応
+    if (isSP && target === "#curriculum") {
+      target = "#sp-curriculum";
+    }
+    
+    const offset = $(target).offset();
+    if (offset) {
+      $("html, body").stop().animate({
+        scrollTop: offset.top - 100
+      }, 600);
+    }
   });
 
 });
-
-
 /*=================================================
 strengths
 ===================================================*/
