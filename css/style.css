@@ -1286,6 +1286,8 @@ footer .line-sp {
 
 .after-panel {
   background-color: #fff;
+  height: 480px;
+  justify-content: flex-start;
 }
 .after-panel .label {
   background-color: #E97C27;
