@@ -1624,9 +1624,8 @@ footer .line-sp {
 @media (max-width: 768px) {
   .list {
     position: absolute;
-    top: 20px;
-    flex-direction: column;
-    flex-wrap: wrap;
+    top: 0px;
+    display: block;
     align-content: space-around;
     gap: 16px;
     width: 100%;
@@ -1644,8 +1643,9 @@ footer .line-sp {
 }
 @media (max-width: 768px) {
   .list .list-img {
-    width: 90%;
+    width: 100%;
     height: 200px;
+    margin: 0 auto;
   }
 }
 .list .list-img img {
@@ -1665,16 +1665,17 @@ footer .line-sp {
 .list .list-content .teacher-name {
   font-size: 1.5rem;
   color: #4B80AA;
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 @media (max-width: 768px) {
   .list .list-content .teacher-name {
+    font-size: 1.125rem;
     margin-top: 8px;
   }
 }
 .list .list-content .point {
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 16px;
 }
 .list .list-content .comment {
@@ -1696,7 +1697,6 @@ footer .line-sp {
 @media (max-width: 768px) {
   .instagram-area .instagram-area-text {
     font-size: 0.875rem;
-    text-align: left;
   }
 }
 .instagram-area .instagram-post {
@@ -2022,6 +2022,9 @@ footer .line-sp {
 @media (max-width: 768px) {
   #sp-curriculum {
     display: block;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 #sp-curriculum .sp-step {
