@@ -24,83 +24,65 @@ $(window).scroll(function () {
 /*=================================================
 ハンバーガ―メニュー & スムーススクロール
 ===================================================*/
-$(document).ready(function () {
+$(function() {
+    const $header = $("header");
+    const $hamburger = $(".hamburger");
+    const $navLinks = $(".flip-nav a");
 
-  const header = $("header");
+    // ハンバーガークリックでメニュー開閉
+    $hamburger.on("click", function() {
+        $header.toggleClass("open");
+    });
 
-  // ハンバーガー開閉
-  $(".hamburger").on("click", function (e) {
-    e.stopPropagation();
-    header.toggleClass("open");
-  });
+    // ナビリンククリックでスムーススクロール + メニュー閉じる
+    $navLinks.on("click", function(e) {
+        const href = $(this).attr("href");
+        // isSP の判定を修正
+        const isSP = $(window).width() <= 768; 
 
-  // メニューリンククリック
-  $(".flip-nav a").on("click", function (e) {
-    if ($(this).hasClass('insta-link')) {
-      header.removeClass("open");
-      return true;
-    }
-    const isSP = $(window).width() <= 768; // SP判定
+        // 外部リンクはそのまま
+        if ($(this).hasClass("insta-link")) {
+            $header.removeClass("open");
+            return true;
+        }
 
-    if (isSP) {
-      // SP版はリンク本来の動作のみ
-      header.removeClass("open"); // メニュー閉じる
-      return true;
-    }
+        // SP版のみ curriculum を切り替え
+        let targetId = href;
+        if (isSP && href === "#curriculum") {
+            targetId = "#sp-curriculum";
+        }
+        
+        const $target = $(targetId);
 
-    // PC版のみスムーススクロール
-    e.preventDefault();
-    let target = $(this).attr("href");
-    
-    // モバイル版セクションへの対応
-    if (isSP && target === "#curriculum") {
-      target = "#sp-curriculum";
-    }
-    
-    const offset = $(target).offset();
-    if (offset) {
-      $("html, body").stop().animate({
-        scrollTop: offset.top - 100 // header高さ分オフセット
-      }, 600);
-    }
+        // アンカーリンクで、かつターゲット要素が存在する場合に処理
+        if (href.startsWith("#") && $target.length) {
+            e.preventDefault(); // アンカーリンクのデフォルト動作（即時ジャンプ）を一旦キャンセル
 
-    header.removeClass("open");
-  });
+            // SP版の場合はスムーズスクロールをせず、即座にジャンプ
+            if (isSP) {
+                // 即座に移動
+                window.location.hash = targetId;
+            } else {
+                // PC版はスムーズスクロール
+                $("html, body").stop().animate({
+                    scrollTop: $target.offset().top - 100 // ヘッダー高さ分調整
+                }, 600);
+            }
+        }
 
-  // メニュー以外クリックで閉じる
-  $(document).on("click", function (e) {
-    if (!$(e.target).closest("header").length) {
-      header.removeClass("open");
-    }
-  });
+        // メニューを閉じる
+        $header.removeClass("open");
+    });
 
-  // 汎用スムーススクロール（PC版のみ）
-  $('a[href^="#"]:not(.insta-link)').on("click", function (e) {
-    const isSP = $(window).width() <= 768; // SP判定
-
-    if (isSP) {
-      // SP版は何もしない（デフォルトのジャンプ動作）
-      return true;
-    }
-
-    // PC版のみスムーススクロール
-    e.preventDefault();
-    let target = $(this).attr("href");
-    
-    // モバイル版セクションへの対応
-    if (isSP && target === "#curriculum") {
-      target = "#sp-curriculum";
-    }
-    
-    const offset = $(target).offset();
-    if (offset) {
-      $("html, body").stop().animate({
-        scrollTop: offset.top - 100
-      }, 600);
-    }
-  });
-
+    // 画面リサイズ時にopen状態をリセット（必要なら）
+    $(window).on("resize", function() {
+        if ($(window).width() > 768) {
+            $header.removeClass("open");
+        }
+    });
 });
+
+
 /*=================================================
 strengths
 ===================================================*/
