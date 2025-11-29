@@ -230,8 +230,6 @@ $arrow-width: 60px; // 矢印の幅
 // --------------------------------------------------
 .after-panel {
     background-color: #fff;
-    height: 480px;
-    justify-content: flex-start;
 
     .label {
         background-color: $accent-color;
@@ -240,5 +238,10 @@ $arrow-width: 60px; // 矢印の幅
     .story-callout {
         color: #fff;
         background-color: $accent-color;
+    }
+
+    @include sp {
+        height: 460px;
+        justify-content: flex-start;
     }
 }
