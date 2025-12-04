@@ -7,6 +7,8 @@ header {
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100;
     box-sizing: border-box;
 
@@ -103,10 +105,7 @@ header {
     }
 }
 
-
-/*==========================
-  ハンバーガー
-===========================*/
+// ハンバーガー
 .hamburger {
     width: 60px;
     height: 60px;
@@ -116,7 +115,7 @@ header {
     position: relative;
     display: none;
     background-color: $main-color;
-    
+
 
     span {
         display: block;
@@ -160,9 +159,7 @@ header.open {
     }
 }
 
-/*==========================
-  SPナビ（ハンバーガーで表示）
-===========================*/
+// sp
 @include sp {
     header {
         padding: 10px 20px;
@@ -193,7 +190,7 @@ header.open {
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                max-width: 300px; // 中央幅制限
+                max-width: 300px; 
                 text-align: center;
             }
 

@@ -200,6 +200,8 @@ header {
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 100;
   box-sizing: border-box;
 }
@@ -281,9 +283,6 @@ header nav.flip-nav .insta-link img {
   display: block;
 }
 
-/*==========================
-  ハンバーガー
-===========================*/
 .hamburger {
   width: 60px;
   height: 60px;
@@ -326,9 +325,6 @@ header.open .hamburger span:nth-child(3) {
   transform: rotate(315deg);
 }
 
-/*==========================
-  SPナビ（ハンバーガーで表示）
-===========================*/
 @media (max-width: 768px) {
   header {
     padding: 10px 20px;
@@ -785,7 +781,11 @@ footer .line-sp {
   }
 }
 @media (max-width: 440px) {
-  .section-intro {
+  .about .speech-bubbles .bubble-1 {
+    top: 3.4%;
+    left: 15vw;
+  }
+  #about .section-intro {
     margin: 200px auto 100px;
   }
 }

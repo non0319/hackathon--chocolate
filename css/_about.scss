@@ -166,7 +166,18 @@
 }
 
 @media(max-width: 440px) {
-        .section-intro {
-                    margin: 200px auto 100px;
+    .about {
+        .speech-bubbles {
+            .bubble-1 {
+                top: 3.4%;
+                left: 15vw;
+            }
         }
+    }
+
+    #about {
+        .section-intro {
+            margin: 200px auto 100px;
+        }
+    }
 }
