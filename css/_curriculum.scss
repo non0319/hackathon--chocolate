@@ -43,7 +43,6 @@
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 10;
-                // color: black;
             }
 
             .step-title,
@@ -157,17 +156,16 @@
             &.orange {
                 background-color: #E97C27;
                 transform: translateX(150vw) rotate(900deg);
-                // 右から転がってく
             }
 
             &.step-blue {
                 background-color: #4B80AA;
-                transform: translateX(-150vw) rotate(-900deg); // 左から転がってくる
+                transform: translateX(-150vw) rotate(-900deg);
             }
 
             &.roll-in {
                 opacity: 1;
-                transform: translateX(0) rotate(0deg); // 中央に停止
+                transform: translateX(0) rotate(0deg); 
             }
         }
 

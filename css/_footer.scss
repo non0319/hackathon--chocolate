@@ -74,7 +74,6 @@ footer {
         display: none;
 
         @include sp {
-            // display: block;
             display: flex !important;
             background-color: #79C2B6;
             border-radius: 20px;
