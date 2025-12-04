@@ -25,7 +25,6 @@ $overlap-amount: 50px;
     }
 }
 
-// ★ 440px以下で1列化
 @media (max-width: 440px) {
     .card-stack-container {
         grid-template-columns: 1fr;
@@ -74,7 +73,6 @@ $overlap-amount: 50px;
     }
 }
 
-// ★ モバイル用スタイルの強制上書き
 @include sp {
     .info-card {
         width: 70%;
@@ -95,7 +93,6 @@ $overlap-amount: 50px;
     }
 }
 
-// PCホバー
 @media screen and (min-width: 769px) {
     .info-card:hover {
         --transform-duration: 0.1s;
@@ -106,7 +103,6 @@ $overlap-amount: 50px;
     }
 }
 
-// アクティブ状態（PC専用）
 @media screen and (min-width: 769px) {
     .card-stack-container.is-active {
         .info-card {

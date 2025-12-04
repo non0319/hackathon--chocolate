@@ -1,7 +1,6 @@
 @use '_mixin' as *;
 
 .mainvisual {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -110,7 +109,6 @@
 }
 
 
-// 画像フェードイン・フェードアウトアニメーション
 @keyframes slider {
     0% {
         opacity: 0;

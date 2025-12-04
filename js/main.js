@@ -1,25 +1,17 @@
 /*=================================================
 スクロール時の画像フェード表示
 ===================================================*/
-// スクロール時のイベント
 $(window).scroll(function () {
-  // fadeinクラスに対して順に処理を行う
   $(".fadein").each(function () {
-    // スクロールした距離
     let scroll = $(window).scrollTop();
-    // fadeinクラスの要素までの距離
     let target = $(this).offset().top;
-    // 画面の高さ
     let windowHeight = $(window).height();
-    // fadeinクラスの要素が画面下にきてから200px通過した
-    // したタイミングで要素を表示
     if (scroll > target - windowHeight + 200) {
       $(this).css("opacity", "1");
       $(this).css("transform", "translateY(0)");
     }
   });
 });
-
 
 /*=================================================
 ハンバーガ―メニュー & スムーススクロール
@@ -37,10 +29,8 @@ $(function() {
     // ナビリンククリックでスムーススクロール + メニュー閉じる
     $navLinks.on("click", function(e) {
         const href = $(this).attr("href");
-        // isSP の判定を修正
         const isSP = $(window).width() <= 768; 
 
-        // 外部リンクはそのまま
         if ($(this).hasClass("insta-link")) {
             $header.removeClass("open");
             return true;
@@ -54,9 +44,8 @@ $(function() {
         
         const $target = $(targetId);
 
-        // アンカーリンクで、かつターゲット要素が存在する場合に処理
         if (href.startsWith("#") && $target.length) {
-            e.preventDefault(); // アンカーリンクのデフォルト動作（即時ジャンプ）を一旦キャンセル
+            e.preventDefault(); 
 
             // SP版の場合はスムーズスクロールをせず、即座にジャンプ
             if (isSP) {
@@ -70,11 +59,9 @@ $(function() {
             }
         }
 
-        // メニューを閉じる
         $header.removeClass("open");
     });
 
-    // 画面リサイズ時にopen状態をリセット（必要なら）
     $(window).on("resize", function() {
         if ($(window).width() > 768) {
             $header.removeClass("open");
@@ -100,13 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const MOBILE_BREAKPOINT = 768;
   const SCROLL_OFFSET = 500;
 
-  // 状態変数
   let openDetailBlock = null;
   let openCardElement = null;
 
   const isMobile = () => window.innerWidth <= MOBILE_BREAKPOINT;
 
-  // PC詳細データ (PC処理のために維持)
   const details = {
     1: { title: "最短で成長できる“戦略的”学習プラン", body: "あなた専属のマンツーマンコーチが、今のレベルに合わせて無理なく学習を進められるようサポートします。毎週の振り返りでつまずきを解消。24時間LINEで質問できるので、分からないまま置いていかれる心配もありません。一人ひとりに合った進め方で、効率的にステップアップできます。" },
     2: { title: "弱点を見える化して、効率よく成長", body: "独学だと「何を優先して学べばいいか分からない…」こともあります。専属コーチがあなたの弱点や課題を分析し、今取り組むべきポイントを明確化。どこを強化すれば成果につながるかが分かるので、ムダなく効率的にスキルアップできます。" },
@@ -136,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   }
 
-  // 矢印アイコンのDOM挿入
   cards.forEach(card => {
     const cardTextContent = card.querySelector('.card-text-content');
     if (cardTextContent && !card.querySelector('.mobile-arrow-icon')) {
@@ -146,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
   // ★ カードクリックイベント
   cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -155,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!data) return;
 
       // -----------------------------------
-      // A. PC処理 (変更なし)
+      // A. PC処理 
       // -----------------------------------
       if (!isMobile()) {
         card.style.transition = "none";
@@ -179,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // -----------------------------------
-      // B. モバイル処理 (max-height方式)
+      // B. モバイル処理 
       // -----------------------------------
 
       // クリックされたカードに対応する詳細ブロックを取得
@@ -188,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const isCurrentCardOpen = targetDetail === openDetailBlock;
 
-      // 1. 既に何か開いている場合、現在のものを閉じる
       if (openDetailBlock) {
         openDetailBlock.classList.remove('is-open');
         if (openCardElement) {
@@ -197,17 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (isCurrentCardOpen) {
-        // 同じカードを再度クリックした場合: 閉じる処理だけで終了
         openDetailBlock = null;
         openCardElement = null;
         return;
       }
 
-      // 2. 新しい詳細を開く
       targetDetail.classList.add('is-open');
       card.classList.add('is-active-mobile');
 
-      // 状態変数を更新
       openDetailBlock = targetDetail;
       openCardElement = card;
 
@@ -226,7 +205,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================
   window.addEventListener('resize', () => {
     if (window.innerWidth > MOBILE_BREAKPOINT) {
-      // PCになったらモバイルの詳細をすべて閉じる
       detailBlocks.forEach(block => {
         block.classList.remove('is-open');
       });
@@ -234,7 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.remove('is-active-mobile');
       });
 
-      // 状態変数をリセット
       openDetailBlock = null;
       openCardElement = null;
       container.classList.add('is-active');
@@ -242,25 +219,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 /*=================================================
  change
 ===================================================*/
 document.addEventListener('DOMContentLoaded', () => {
   const storyControls = document.querySelector('.story-controls');
   const slider = document.querySelector('.story-slider');
-
-  // ブレイクポイントの定義 (SCSSの$breakpoint-pc: 768pxと一致)
   const BREAKPOINT = 769;
 
-  // PCビューの判定 (clientWidthを使用し、より安定した判定を試みる)
-  const isPC = () => window.innerWidth >= BREAKPOINT; // window.innerWidth で問題ないはずですが、念のためそのまま
+  const isPC = () => window.innerWidth >= BREAKPOINT; 
 
   if (storyControls && slider) {
-    let isAfterActive = false; // モバイルの状態 (Before=false, After=true)
+    let isAfterActive = false;
 
     const setActiveButton = (target) => {
-      // 適切なボタンに 'active' クラスを付与
       document.querySelectorAll('.control-btn').forEach(btn => {
         btn.classList.remove('active');
         if (btn.getAttribute('data-target') === target) {
@@ -284,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // コントロールボタンのイベントリスナー設定
     storyControls.addEventListener('click', (e) => {
       // PCの場合、ボタンクリック処理は無視
       if (isPC()) return;
@@ -305,14 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 画面サイズ変更時にも位置を調整 (PC/モバイル切り替え時に特に重要)
     window.addEventListener('resize', updateSliderPosition);
 
-    // ★ 初期ロード時の調整
-    // 初期状態は'before'に設定
     isAfterActive = false;
 
-    // 初期位置とボタンの状態を設定
     updateSliderPosition();
     setActiveButton('before');
   }

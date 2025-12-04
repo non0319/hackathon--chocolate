@@ -25,7 +25,6 @@
     }
 }
 
-
 // 流れるオレンジの文字
 .infinite-marquee {
     width: 100%;
@@ -42,9 +41,9 @@
     span {
         font-size: 300px;
         font-weight: 600;
-        color: rgba(233, 124, 39, 0.2); // #E97C27 の 20% 透明
+        color: rgba(233, 124, 39, 0.2); 
         display: inline-block;
-        padding-right: 50px; // 文字間の余白
+        padding-right: 50px; 
     }
 }
 
@@ -58,9 +57,8 @@
     }
 }
 
-// ==============================
-// スマホ対応
-// ==============================
+
+// sp
 @media (max-width: $sp) {
     #reason {
         .reason-item {

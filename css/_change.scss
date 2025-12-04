@@ -1,13 +1,9 @@
 @use "mixin" as *;
 
 
-$before-light-bg: #F9F9F9; // Beforeパネル専用の明るめの背景色
+$before-light-bg: #F9F9F9;
 $breakpoint-pc: 769px;
-$arrow-width: 60px; // 矢印の幅
-
-// ================================================
-// ★★★ メディアクエリの切り替え（PCスタイルをデフォルト化） ★★★
-// ================================================
+$arrow-width: 60px;
 
 .change {
     padding: 60px 20px;
@@ -26,8 +22,6 @@ $arrow-width: 60px; // 矢印の幅
     max-width: 900px;
     margin: 0 auto;
     position: relative;
-
-    // PCスタイル（デフォルト）: 中央に配置する役割
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,21 +29,17 @@ $arrow-width: 60px; // 矢印の幅
     padding-bottom: 20px;
 
     @include sp {
-        // モバイルでブロックフローに戻す
         display: block;
         padding-top: 0;
         padding-bottom: 0;
     }
 }
 
-// --------------------------------------------------
-// モバイル用切り替えボタン
-// --------------------------------------------------
 .story-controls {
-    display: none; // PCデフォルトでは非表示
+    display: none;
 
     @include sp {
-        display: flex; // モバイルで表示
+        display: flex;
         justify-content: center;
         margin-bottom: 20px;
     }
@@ -72,9 +62,6 @@ $arrow-width: 60px; // 矢印の幅
     }
 }
 
-// --------------------------------------------------
-// PC用中央の矢印 (HTML構造の制約に対応する調整)
-// --------------------------------------------------
 .story-divider {
     flex-shrink: 0;
 
@@ -96,29 +83,23 @@ $arrow-width: 60px; // 矢印の幅
     }
 }
 
-// --------------------------------------------------
-// スライダーコンテナ (モバイル動作維持とPCデザインの両立)
-// --------------------------------------------------
-.story-main-content {
-    // PCでは特に幅を設定せず、story-sliderに任せる
 
+.story-main-content {
     @include sp {
         display: block;
         width: 100%;
-        overflow: hidden; // ★★★ 修正済み：モバイルでのスライドを隠すために必須
+        overflow: hidden;
     }
 }
 
 .story-slider {
-    // PCスタイル（デフォルト）
     display: flex;
-    width: 820px; // パネル(380) x 2 + 矢印(60)
+    width: 820px;
     transform: translateX(0);
     transition: none;
     box-shadow: none;
     align-items: center;
 
-    // モバイルでは幅とFlexを強制
     @include sp {
         display: flex;
         width: 200%;
@@ -127,9 +108,6 @@ $arrow-width: 60px; // 矢印の幅
     }
 }
 
-// --------------------------------------------------
-// パネルの共通スタイル
-// --------------------------------------------------
 .story-panel {
     flex-shrink: 0;
     width: 380px;
@@ -182,9 +160,6 @@ $arrow-width: 60px; // 矢印の幅
     }
 }
 
-// --------------------------------------------------
-// 吹き出しスタイル (.story-callout)
-// --------------------------------------------------
 .story-callout {
     font-size: 0.8rem;
     padding: 6px 12px;
@@ -204,9 +179,8 @@ $arrow-width: 60px; // 矢印の幅
     left: auto;
 }
 
-// --------------------------------------------------
-// Before パネル & 吹き出し (カラーリング)
-// --------------------------------------------------
+
+// Before パネル 
 .before-panel {
     background-color: $before-light-bg;
 
@@ -225,9 +199,7 @@ $arrow-width: 60px; // 矢印の幅
     }
 }
 
-// --------------------------------------------------
-// After パネル & 吹き出し (カラーリング)
-// --------------------------------------------------
+// After パネル 
 .after-panel {
     background-color: #fff;
 
