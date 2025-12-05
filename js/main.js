@@ -1,5 +1,5 @@
 /*=================================================
-スクロール時の画像フェード表示
+  スクロール時の画像フェード表示
 ===================================================*/
 $(window).scroll(function () {
   $(".fadein").each(function () {
@@ -14,7 +14,7 @@ $(window).scroll(function () {
 });
 
 /*=================================================
-ハンバーガ―メニュー & スムーススクロール
+  ハンバーガ―メニュー & スムーススクロール
 ===================================================*/
 $(function() {
     const $header = $("header");
@@ -69,9 +69,8 @@ $(function() {
     });
 });
 
-
 /*=================================================
-strengths
+  strengths
 ===================================================*/
 document.addEventListener('DOMContentLoaded', () => {
   // ================================================
@@ -220,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*=================================================
- change
+  change
 ===================================================*/
 document.addEventListener('DOMContentLoaded', () => {
   const storyControls = document.querySelector('.story-controls');
@@ -296,7 +295,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!pages.length || !book) return;
 
-  // ▼ SP 判定（768px 以下）
   const isSP = window.innerWidth <= 768;
 
   // ▼ SP のときはページめくりを無効化（イベント付与しない）
@@ -309,7 +307,6 @@ document.addEventListener("DOMContentLoaded", function () {
     page.style.zIndex = pages.length - i;
   });
 
-  // ▼ ページをめくる関数（PC 専用）
   function flipNextPage() {
     const page = pages[currentPage];
     if (!page) return;
@@ -358,25 +355,19 @@ window.addEventListener("load", () => {
 
   const isSP = window.innerWidth <= 768; 
 
-  // CSSで設定されたリストアイテムの高さ
   const listHeight = isSP ? 560 : 400; 
-  // Pinを維持する総スクロール距離
+  
   const pinDistance = lists.length * listHeight; 
   
   // 各カードが次のカードに切り替わるまでのスクロール間隔を設定
-  // listHeight の 50% の距離で次のカードが上がり始めます (例: 280px ごと)
-  const SCROLL_INTERVAL = listHeight * 0.5; // 調整可能
+  const SCROLL_INTERVAL = listHeight * 0.5;
 
-  // 初期状態: 全てのリストアイテムを非表示に設定
-  // y の初期値はCSSの top: 80px が適用される
   gsap.set(lists, { opacity: 0, y: 100 }); 
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: listArea,
-      // Pin開始位置
       start: isSP ? "top top+=50" : "top top", 
-      // Pin終了位置: Pin距離 2240px
       end: "+=" + pinDistance, 
       scrub: true,
       pin: listArea,
@@ -398,41 +389,35 @@ window.addEventListener("load", () => {
   });
 });
 
-
-
-
 /*=================================================
   metaleaf
 ===================================================*/
 $(function () {
-  // feature をクリック → モーダルを開く
   $('.feature').on('click', function () {
     const modalId = $(this).data('modal');
     $('#' + modalId).addClass('open');
 
-    // ▼スクロールを止める
     $('body').css('overflow', 'hidden');
   });
 
-  // 閉じるボタン
   $('.modal .close').on('click', function () {
     $(this).closest('.modal').removeClass('open');
 
-    // ▼スクロールを戻す
     $('body').css('overflow', 'auto');
   });
 
-  // モーダル背景をクリック → 閉じる
   $('.modal').on('click', function (e) {
     if ($(e.target).hasClass('modal')) {
       $(this).removeClass('open');
 
-      // ▼スクロールを戻す
       $('body').css('overflow', 'auto');
     }
   });
 });
 
+/*=================================================
+  5Step
+===================================================*/
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   slidesPerView: 3,
@@ -445,7 +430,6 @@ const swiper = new Swiper('.swiper', {
   },
   scrollbar: { el: '.swiper-scrollbar' },
 });
-
 
 // 5Stepのレスポンシブ時のアニメーション
 let lastScroll = 0;
@@ -473,8 +457,9 @@ $(window).on('scroll load', function () {
   lastScroll = scroll; 
 });
 
-
-// フッターの無料カウンセリングボタン（SP時）
+/*=================================================
+  フッターの無料カウンセリングボタン（SP時）
+===================================================*/
 
 let pagetop = $(".line-sp");
 pagetop.hide(); 

@@ -18,7 +18,6 @@
 
             @include sp{
                 position: static;
-                height: auto;
             }
     
         .teachers-header {
@@ -47,10 +46,10 @@
 
 .list {
     position: absolute;
-    top: 370px;
+    top: 350px;
     left: 0;
     width: 100%;
-    height: 350px;
+    height: 320px;
     background: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -73,7 +72,7 @@
         height: 560px;
         border-radius: 16px;
         padding: 8px;
-        margin: 0 auto 20px;
+        margin: 0 auto;
     }
 
     .list-img {
